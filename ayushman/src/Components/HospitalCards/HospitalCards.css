@@ -1,0 +1,81 @@
+.border{
+    border: 2px solid black
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: fit-content;
+    padding: 40px;
+    width: 80%;
+    margin-top: 50px;
+    border-radius: 4px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ultra-light-blue-bg);
+}
+
+.card-img{
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+.card-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-info-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.card-info-box{
+    display: inline-block;
+    height: 150px;
+    width: 140px;
+    margin-right: 80px;
+}
+
+.card-info-box:nth-child(4){
+    margin-right: 0;
+
+
+}
+
+.card-hosp-name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 66px;
+    line-height: 77px;
+    text-align: left;
+    margin: 0%;
+    color: var(--title);
+}
+
+.card-address{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    margin: 0%;
+    text-align: left;
+    
+    color: #0D4F8C;
+}
+
+.card-hosp-text{
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
