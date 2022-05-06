@@ -8,6 +8,7 @@
     align-items: center;
 
     min-height: fit-content;
+    max-width: 1200px;
     padding: 40px;
     width: 80%;
     margin-top: 50px;
@@ -19,11 +20,14 @@
     background-color: var(--ultra-light-blue-bg);
 }
 
-.card-img{
-    display: block;
-    width: 300px;
-    height: 300px;
-}
+ .card-img{
+    display: inline-block;
+    background-image: url("../../Assets/Images/hospImage.png");
+    background-size: cover;
+    width: 16em;
+    height: 16em;
+
+} 
 
 .card-info{
     display: flex;
@@ -39,16 +43,35 @@
     margin-top: 20px;
 }
 .card-info-box{
-    display: inline-block;
-    height: 150px;
-    width: 140px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    width: 150px;
     margin-right: 80px;
+}
+
+.card-info-box > span {
+    margin: 18px 0px;
 }
 
 .card-info-box:nth-child(4){
     margin-right: 0;
 
 
+}
+
+
+
+.card-info-box-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 112%;
+    text-align: center;
+    margin: 0%;
 }
 
 .card-hosp-name{

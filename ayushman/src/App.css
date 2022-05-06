@@ -7,3 +7,17 @@
   --ultra-light-blue-bg : #D5EBFF;
   --ultra-light : rgb(213, 235, 255, 0.2);
 }
+
+.bed-icon{
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  padding: 12px 15px;
+  border-radius: 3px;
+  background-color: var(--ligh-blue);
+}
+
+
+.red{
+  color: #FB4343;
+}
