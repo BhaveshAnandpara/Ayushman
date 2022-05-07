@@ -1,6 +1,3 @@
-.border{
-    border: 2px solid black
-}
 
 .card{
     display: flex;
@@ -8,8 +5,9 @@
     align-items: center;
 
     min-height: fit-content;
-    max-width: 1200px;
-    padding: 40px;
+    max-width: 1150px;
+    min-width: 1100px;
+    padding: 20px 30px;
     width: 80%;
     margin-top: 50px;
     border-radius: 4px;
@@ -17,15 +15,17 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--ultra-light-blue-bg);
+    background-color: var(--ultra-light);
+    font-family: var(--primary-font);
 }
 
  .card-img{
     display: inline-block;
     background-image: url("../../Assets/Images/hospImage.png");
     background-size: cover;
-    width: 16em;
-    height: 16em;
+    width: 17em;
+    height: 17em;
+    opacity: 0.8;
 
 } 
 
@@ -34,26 +34,37 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 .card-info-box-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .card-info-box{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    height: fit-content;
+    height: 160px;
     width: 150px;
-    margin-right: 80px;
+    margin-right: 60px;
+    color: var(--subtitle)
 }
 
 .card-info-box > span {
-    margin: 18px 0px;
+    margin: 14px 0px;
+    height: 38px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 132%;
+}
+
+.card-info-box > p {
+    font-size: 1.5em;
+
 }
 
 .card-info-box:nth-child(4){
@@ -65,7 +76,6 @@
 
 
 .card-info-box-text{
-    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
@@ -75,7 +85,6 @@
 }
 
 .card-hosp-name{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 66px;
@@ -86,7 +95,6 @@
 }
 
 .card-address{
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
@@ -94,7 +102,7 @@
     margin: 0%;
     text-align: left;
     
-    color: #0D4F8C;
+    color: var(--subtitle);
 }
 
 .card-hosp-text{

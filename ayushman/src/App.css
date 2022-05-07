@@ -6,7 +6,13 @@
   --light-blue-bg : #D5EBFF;
   --ultra-light-blue-bg : #D5EBFF;
   --ultra-light : rgb(213, 235, 255, 0.2);
+  --primary-font : 'Poppins', sans-serif;
 }
+
+.border{
+  border: 2px solid black
+}
+
 
 .bed-icon{
   display: inline-block;
@@ -14,10 +20,14 @@
   height: 24px;
   padding: 12px 15px;
   border-radius: 3px;
-  background-color: var(--ligh-blue);
+  background-color: var(--ultra-light-blue-bg);
 }
 
 
 .red{
   color: #FB4343;
+}
+
+.green{
+  color: #43BD2F;
 }
