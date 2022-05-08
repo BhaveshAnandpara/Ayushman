@@ -5,12 +5,13 @@ import ApproximateCost from './Pages/Approximate-Cost/Approximate-cost'
 import Feedback from './Pages/Feedback/Feedback'
 import Login from './Pages/Login/Login'
 import HospitalCard from './Components/HospitalCards/HospitalCards'
-
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-        <HospitalCard/>
+      <Navbar/>
+      {/* <HospitalCard/> */}
     </div>
   );
 }

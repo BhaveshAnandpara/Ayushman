@@ -2,6 +2,7 @@ import React from 'react'
 import '../HospitalCards/HospitalCards.css'
 import bedIcon from '../../Assets/Icons/bed-icon.svg'
 import oxygenIcon from '../../Assets/Icons/oxygen-icon.svg'
+import Navbar from '../Navbar/Navbar'
 
 export default function HospitalCards() {
   return (

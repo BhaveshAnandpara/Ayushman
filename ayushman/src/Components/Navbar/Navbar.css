@@ -1,0 +1,17 @@
+.Nav-container{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    align-items: center;
+    width: 1502px;
+    height: 70px;
+    left: 0px;
+    top: 72px;
+    background: #ADD7FF;
+    text-decoration: none;
+
+}
+
+.components-1{
+    word-spacing: 30px;
+}
