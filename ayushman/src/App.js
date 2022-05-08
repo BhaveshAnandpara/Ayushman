@@ -14,11 +14,9 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar/>
-      {/* <HospitalCard/> */}
-
       <Header/>
-        <HospitalCard/>
+      <Navbar />
+      <HospitalCard/>
 
     </div>
   );

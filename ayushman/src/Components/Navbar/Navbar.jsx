@@ -3,23 +3,19 @@ import '../Navbar/Navbar.css'
 
 export default function Navbar() {
   return (
-    <div className='Nav-container'>
-      <div classname="components-1">
-        <nav>
-          <ul>
-         <a href='#'id='nav-comp0'>Home</a>
-          <a href='#' id='nav-compo'>Hospital</a>
-          
-          <a href='#' id='nav-compo'>Approximate cost</a>
-          <a href='#'id='nav-compo'>Feedback</a>
-          
-          </ul>
-        </nav>
-        
+    <div className='nav-container '>
+
+      <div className="nav-items">
+          <span> Home </span>
+          <span> Hospital </span>
+          <span> Approximate Cost </span>
+          <span> Feedback </span>  
       </div>
-      <div className='components-2'>
-      <a href='#'>Login</a>
+
+      <div className='nav-login '>
+        <span >Login</span>
       </div>
+
       </div>
   )
 }

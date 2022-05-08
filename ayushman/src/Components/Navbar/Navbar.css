@@ -1,18 +1,26 @@
-.Nav-container{
+.nav-container {
     display: flex;
     justify-content: space-between;
-    position: absolute;
     align-items: center;
-    width: 1502px;
-    height: 70px;
-    left: 0px;
-    top: 72px;
-    background: #ADD7FF;
-    text-decoration: none;
-
+    background: hsl(209, 100%, 84%);
+    padding: 10px 75px;
 }
 
-.components-1{
-    word-spacing:30px;
+.nav-items > span , .nav-login > span{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    border-right: 2px solid var(--subtitle);
+    padding: 0 27px 0 0 ;
+    color: var(--subtitle);
+    cursor: pointer;
 }
-/* ss */
+
+.nav-items > span:not(:nth-child(1)){
+    padding-left: 27px;
+}
+
+.nav-login > span{
+    border: none ;
+    padding-right: 0;
+}

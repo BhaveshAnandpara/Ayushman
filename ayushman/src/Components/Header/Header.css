@@ -1,0 +1,13 @@
+#header-txt{
+font-family: 'Poppins';
+font-style: italic;
+font-weight: 700;
+font-size: 25px;
+line-height: 38px;
+text-align: center;
+padding: 10px 0 ;
+margin: 0%;
+
+color: var(--subtitle);
+
+}
