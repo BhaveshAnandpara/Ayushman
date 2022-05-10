@@ -1,0 +1,18 @@
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ligh-blue);
+    padding: 10px 75px;
+}
+
+
+.login-items > span{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    border-right: 2px solid var(--subtitle);
+    padding: 100p ;
+    color: var(--subtitle);
+    cursor: pointer;
+}
