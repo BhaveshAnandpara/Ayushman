@@ -8,15 +8,17 @@ import HospitalCard from './Components/HospitalCards/HospitalCards'
 
 import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
+import Search from './Components/Search/Search.jsx';
+
 
 
 function App() {
   return (
     <div className="App">
 
-      <Header/>
-      <Navbar />
-      <HospitalCard/>
+
+      <Search />
+
 
     </div>
   );
