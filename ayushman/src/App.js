@@ -9,30 +9,21 @@ import HospitalCard from './Components/HospitalCards/HospitalCards'
 
 import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
-<<<<<<< HEAD
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
-=======
+import Search from './Components/Search/Search.jsx';
 import Search from './Components/Search/Search.jsx';
 
 
->>>>>>> 27cb3211746629edeb76fba33d22efcdeb74585f
 
 function App() {
   return (
     <div className="App">
 
-      {/* <Header/>
-      <Navbar />
-<<<<<<< HEAD
-    
-      <HospitalProfile/>
-=======
-      <HospitalCard/> */}
       <Login/>
 
       <Search />
+      <hospitalProfile/>
 
->>>>>>> 27cb3211746629edeb76fba33d22efcdeb74585f
 
     </div>
   );

@@ -1,0 +1,26 @@
+#Container-search{
+    background-color: var(--light-blue-bg );
+    display: block;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+   
+
+}
+
+#Container-search>p{
+    
+ 
+    color: var(--title);
+
+}
+#Container-search-1{
+    display: flex;
+    justify-content: space-around;
+    
+}
+#Container-search-1-3>button{
+    background-color: var(--title);
+    color:var(--ultra-light-blue-bg );
+}
