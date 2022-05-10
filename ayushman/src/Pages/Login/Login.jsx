@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Login/Login.css'
 
 export default function Login() {
   return (
@@ -15,7 +16,11 @@ export default function Login() {
             <button type="button">Get OTP</button>
         </div>
         <div className='patient-container-2'>
-            <span>OTP has been sent to above number</span>
+            <p>OTP has been sent to above number</p>
+            <div className='otp1'><input type="number"/></div>
+            <div className='otp2'><input type="number"/></div>
+            <div className='otp3'><input type="number"/></div>
+            <div className='otp4'><input type="number"/></div>
         </div>
         <div>
           <button type="button">LOGIN</button>
