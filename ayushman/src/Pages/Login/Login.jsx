@@ -3,31 +3,60 @@ import '../Login/Login.css'
 
 export default function Login() {
   return (
-    <div className='login-container'>
+
+    <div className='Login-main'>
       <div className='login-items'>
-          <span> Patient </span>
-          <span> Hospital </span>
-          <span> Medical Council </span>
+        <span> Patient </span>
+        <span> Hospital </span>
+        <span> Medical Council </span>
 
       </div>
-      <div className='patient-container'>
-        <div className='patient-container-1'>
-            <input type="number" placeholder="+91 | Mobile No."/>
+
+      <div className='login-container'>
+
+        <div className='patient-container'>
+          <div className='patient-container-1'>
+            <input type="number" placeholder="+91 | Mobile No." />
             <button type="button">Get OTP</button>
+          </div>
+          <div><p>OTP has been sent to above number</p></div>
+          <div className='patient-container-2'>
+
+            <div className='otp1'><input type="number" /></div>
+            <div className='otp2'><input type="number" /></div>
+            <div className='otp3'><input type="number" /></div>
+            <div className='otp4'><input type="number" /></div>
+          </div>
+          <div>
+            <button type="button">LOGIN</button>
+          </div>
+
         </div>
-        <div className='patient-container-2'>
-            <p>OTP has been sent to above number</p>
-            <div className='otp1'><input type="number"/></div>
-            <div className='otp2'><input type="number"/></div>
-            <div className='otp3'><input type="number"/></div>
-            <div className='otp4'><input type="number"/></div>
+      </div>
+      <div className='hospital-login-container'>
+        <div className='hospital-id'>
+          <input type="text" placeholder='Hospital ID'></input>
         </div>
-        <div>
-          <button type="button">LOGIN</button>
+        <div className='Hospital-password'> <input type="password" placeholder='Password'></input></div>
+        <div className='submit'>
+          <button type='submit'>Login</button>
         </div>
+
 
       </div>
 
+      <div className='medical-login-container'>
+      <div className='authority-id'>
+          <input type="text" placeholder='Authority ID'></input>
+        </div>
+        <div className='MedC-password'> <input type="password" placeholder='Password'></input></div>
+        <div className='submit'>
+          <button type='submit'>Login</button>
+        </div>
+
+
+
+      </div>
     </div>
   )
 }

@@ -11,7 +11,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
-import Search from './Components/Search/Search.jsx';
+
 
 
 
@@ -21,7 +21,7 @@ function App() {
 
       <Login/>
 
-      <Search />
+      {/* <Search /> */}
       <hospitalProfile/>
 
 
