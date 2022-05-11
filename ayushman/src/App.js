@@ -14,14 +14,12 @@ import Search from './Components/Search/Search.jsx';
 
 
 
-
 function App() {
   return (
     <div className="App">
 
       <Login/>
 
-      {/* <Search /> */}
       <hospitalProfile/>
 
 
