@@ -18,7 +18,14 @@ function App() {
   return (
     <div className="App">
 
-      <Search />
+<<<<<<< HEAD
+    
+      <HospitalProfile/>
+=======
+      <Login/>
+
+      <hospitalProfile/>
+>>>>>>> 38dc2d5657a28420827ddc3c5a76b3ca47313ca9
 
 
     </div>
