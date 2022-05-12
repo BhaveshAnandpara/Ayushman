@@ -5,14 +5,15 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 5px 40px 20px 40px;
-    width: 80%;
+    max-width: 80%;
+    min-width: 80%;
     height: 30%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.search-container > * {
+.search-container>* {
     width: 100%;
 }
 
@@ -25,7 +26,7 @@
     line-height: 38px;
 }
 
-.all-search-parameters{
+.all-search-parameters {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -36,24 +37,25 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    width: 80%;
+    width: 85%;
 }
 
-.search-parameters > div {
+.search-parameters>div {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.stateAndDistrict{
+.stateAndDistrict {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+
 .search-input {
     font-size: 18px;
-    width: 400px;
-    padding: 12px 0px 12px 24px;
+    width: 22em;
+    padding: 5px 0px;
     border: none;
     color: var(--title);
     outline: none;
@@ -61,24 +63,20 @@
     border-radius: 3px;
 }
 
-.search-input:nth-child(1){
-    margin-right: 50px;
-}
+
 
 .search-input::placeholder {
     color: var(--title);
 }
 
-.search-parameters > div:nth-child(2){
+.search-parameters>div:nth-child(2) {
     overflow: hidden;
 }
 
-.SearchByHospitalName{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.SearchByHospitalName {
+
     width: 100%;
-    padding: 15px 0px 15px 24px;
+    /* padding: 15px 0px 15px 24px; */
     margin: 0%;
 
 }
@@ -95,4 +93,62 @@
     padding: 5px 25px;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.stateAndDistrict > div {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.search-input-conatainer{
+    background-color: var(--light-blue-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    padding-right: 10px;
+}
+
+/* Dropdowns */
+
+.state-dropdown {
+    background: var(--light-blue-bg);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--subtitle);
+    border-radius: 4px;
+    
+    /* position: absolute; */
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.state-dropdown > p {
+    width: 96%;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--subtitle);
+
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 38px;
+    color: var(--title);
+
+}
+
+.state-dropdown > p:nth-last-child(1){
+    border-bottom: none;
+
 }

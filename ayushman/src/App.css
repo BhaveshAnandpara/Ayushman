@@ -12,6 +12,10 @@
   border: 2px solid black
 }
 
+.icon{
+  color: var(--title);
+  transform: scale(1.4);
+}
 
 .bed-icon{
   display: inline-block;
