@@ -4,7 +4,7 @@ import '../Login/Login.css'
 export default function Login() {
   return (
 
-    <div className='Login-main'>
+    <div className='login-main'>
       <div className='login-items'>
         <span> Patient </span>
         <span> Hospital </span>
@@ -14,7 +14,7 @@ export default function Login() {
 
       <div className='login-container'>
 
-        <div className='patient-container'>
+        <div className='patient-container border'>
           <div className='patient-container-1'>
             <input type="number" placeholder="+91 | Mobile No." />
             <button type="button">Get OTP</button>
@@ -33,7 +33,7 @@ export default function Login() {
 
         </div>
       </div>
-      <div className='hospital-login-container'>
+      <div className='hospital-login-container border'>
         <div className='hospital-id'>
           <input type="text" placeholder='Hospital ID'></input>
         </div>
@@ -45,7 +45,7 @@ export default function Login() {
 
       </div>
 
-      <div className='medical-login-container'>
+      <div className='medical-login-container border'>
       <div className='authority-id'>
           <input type="text" placeholder='Authority ID'></input>
         </div>
