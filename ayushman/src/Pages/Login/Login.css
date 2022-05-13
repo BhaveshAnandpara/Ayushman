@@ -17,6 +17,7 @@
     padding: 100p ;
     color: var(--subtitle);
     cursor: pointer;
+    position: absolute;
 }
 /* .login-items > span:not(:nth-child(1)){
     padding-left: 25px;
