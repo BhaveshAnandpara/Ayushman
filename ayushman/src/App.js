@@ -17,17 +17,7 @@ import Search from './Components/Search/Search.jsx';
 function App() {
   return (
     <div className="App">
-
-<<<<<<< HEAD
-    
       <HospitalProfile/>
-=======
-      <Login/>
-
-      <hospitalProfile/>
->>>>>>> 38dc2d5657a28420827ddc3c5a76b3ca47313ca9
-
-
     </div>
   );
 }
