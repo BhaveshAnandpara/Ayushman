@@ -17,7 +17,11 @@ import Search from './Components/Search/Search.jsx';
 function App() {
   return (
     <div className="App">
-      <HospitalProfile/>
+    
+    <Header/>
+    <Navbar/>
+    {/* <Search/> */}
+    <HospitalCard/>
     </div>
   );
 }
