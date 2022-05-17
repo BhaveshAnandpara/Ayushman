@@ -76,6 +76,7 @@
 .SearchByHospitalName {
 
     width: 100%;
+    position: inherit !important;
     /* padding: 15px 0px 15px 24px; */
     margin: 0%;
 
@@ -150,5 +151,51 @@
 
 .state-dropdown > p:nth-last-child(1){
     border-bottom: none;
+
+}
+
+.tag-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    margin-bottom: 0% !important;
+    width: 100%;
+}
+
+
+
+.tag{
+
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    margin: 10px 20px 10px 0px ;
+
+    padding: 10px 15px;
+    background-color: #4993D7;
+
+
+
+}
+
+#tagText{
+    font-size: 18px;
+    font-style: var(--primary-font);
+    margin-right: 15px;
+    color: white;
+}
+
+.cross{
+    background-image: url(../../Assets/Icons/x-white.svg);
+    display: block;
+    height: 24px;
+    width: 24px;
+    transform: scale(0.8);
 
 }
