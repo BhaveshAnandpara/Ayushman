@@ -1,19 +1,110 @@
 import React from 'react'
+import { useState } from 'react';
+import Select from 'react-select';
+
 import '../Search/Search.css'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function Search() {
+
+  const State = [
+    { label: 'Maharashtra', value: 'Maharashtra' },
+    { label: 'Gujrat', value: 'Gujrat' },
+    { label: 'Rajasthan', value: 'Rajasthan' },
+  ]
+
+  const District = [
+    { label: 'Akola', value: 'Akola' },
+    { label: 'Amravati', value: 'Amravati' },
+    { label: 'Nagpur', value: 'Nagpur' },
+    { label: 'Wardha', value: 'Wardha' },
+  ]
+
+  const Hospitals = [
+    { label: 'ABC Hospital', value: 'ABC Hospital' },
+    { label: 'DEF Hospital', value: 'DEF Hospital' },
+    { label: 'GHI Hopsital', value: 'GHI Hopsital' },
+    { label: 'XYZ Hospital', value: 'XYZ Hospital' },
+  ]
+
+  const customStyles = {
+    input : (provided, state) => ({
+      ...provided,
+      padding:'0px',
+      border:'none',
+      outline:'none'
+    }),
+    dropdownIndicator : (provided, state) => ({
+      ...provided,
+      color:'#0D4F8C',
+      width:'36px',
+      height:'36px'
+    }),
+    control : (provided, state) => ({
+      ...provided,
+      backgroundColor:'none',
+      border:'none',
+      boxShadow:'none',
+      "&:hover": {
+        border:'none !important',
+      }
+    }),
+    container : (provided, state) => ({
+      ...provided,
+      "&:hover": {
+        border:'none',
+      }
+    })
+  }
+
   return (
-    <div id='Container-search'>
-      <p id='heading'>Search-hospitals</p>
-      <div id='Container-search-1'>
-      <div id='Container-search-1.1'><input type="text"/></div>
-      <div id='Container-search-1-2'><input type="text"/></div>
-      <div id='Container-search-1-3'>
-        <button type="button">Search</button></div>
+    <div className='search-container '>
+
+      <p className="container-title">Search Hospitals</p>
+
+<div className="all-search-parameters ">
+      <div className="search-parameters ">
+
+        <div className="stateAndDistrict ">
+
+
+
+          <div className=''>
+            <div className='search-input-conatainer'>
+              <Select styles={customStyles} options={State} className="search-input" onChange={opt => console.log(opt.value)} id='state-input' placeholder="State"/>
+            </div>
+              <div className="state-dropdown "  id='state-dropdown' >
+              <p>Maharashtra</p>
+              <p>Gujrat</p>
+              <p>Madhaya Pradesh</p>
+              <p>Delhi</p>
+            </div>
+          </div>
+
+          <div className=''>
+            <div className='search-input-conatainer'>
+              <Select styles={customStyles} options={District} className="search-input" onChange={opt => console.log(opt.value)} id='state-input' placeholder="District"/>
+            </div>
+              <div className="state-dropdown "  id='state-dropdown' >
+              <p>Maharashtra</p>
+              <p>Gujrat</p>
+              <p>Madhaya Pradesh</p>
+              <p>Delhi</p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      <div className="">
+      <Select options={Hospitals} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }} styles={customStyles}  className="search-input SearchByHospitalName" onChange={opt => console.log(opt.value)} id='state-input' placeholder="Search Hospital "/>
       </div>
-      <div id='Container-search-2'>
-      <div id='Container-search-2'><input type="text"/></div>
-       </div>
+
+      </div>
+
+          <button className="searchButton " type="button">Search</button>
 </div>
+    </div>
   )
 }
