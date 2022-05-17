@@ -34,7 +34,7 @@
 
 .profile-img{
     display: inline-block;
-    background-image: url("../../Assets/Images/hospImage.png");
+    /* background-image: url("../../Assets/Images/hospImage.png"); */
     background-size: cover;
     width: 300px;
     height: 300px;
