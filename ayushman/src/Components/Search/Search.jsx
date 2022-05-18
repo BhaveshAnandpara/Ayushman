@@ -68,9 +68,11 @@ export default function Search(props) {
   const deleteTag = ( event )=>{
 
         let tag = document.getElementById(event.target.id)
+        let tagText = tag.firstChild.textContent
         tag.remove()
-        console.log(tag)
-        selectedOptions.splice( event.target.id-1 , 1)
+
+        let index = selectedOptions.indexOf(tagText)
+        selectedOptions.splice( index , 1)
         console.log(selectedOptions)
 
   }
