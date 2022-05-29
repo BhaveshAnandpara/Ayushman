@@ -75,9 +75,6 @@ export default function Search(props) {
 
     if (!selectedOptions.includes(value)) {
       selectedOptions.push(value)
-      console.log(
-        (myJSON.states[0].state)
-      )
       showTags(value)
     }
 
@@ -155,12 +152,14 @@ export default function Search(props) {
 
       {/* Normal Search */}
 
-      <p className="container-title">Search Hospitals</p>
+      {!props.advanceSearch &&
+        <p className="container-title">Search Hospitals</p>
+      }
 
-      <div className="all-search-parameters ">
 
-        {!props.advanceSearch &&
 
+      {!props.advanceSearch &&
+        <div className="all-search-parameters ">
           <div className="search-parameters ">
 
             <div className="stateAndDistrict ">
@@ -188,17 +187,17 @@ export default function Search(props) {
 
           </div>
 
-        }
+          <button className="btn " type="button">Search</button>
+        </div>
 
-        {
+      }
 
-          props.advanceSearch &&
-
-
-
+      {
+        props.advanceSearch &&
+        <div className="all-search-parameters advSearch">
           <div className="search-parameters ">
 
-            <div className="stateAndDistrict ">
+            <div className="stateAndDistrict advSearch-stateAndDistrict">
 
 
               <div className=''>
@@ -246,17 +245,15 @@ export default function Search(props) {
               }
             </div>
 
+          <button className="btn-sm " type="button"> Save </button>
           </div>
 
-        }
+        </div>
+
+      }
 
 
-        {/* Advanced Search */}
 
-
-
-        <button className="searchButton " type="button">Search</button>
-      </div>
 
 
     </div>

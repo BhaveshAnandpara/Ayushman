@@ -8,9 +8,7 @@
     max-width: 80%;
     min-width: 80%;
     height: 30%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(0%); /* Do not remove this cause Dropdown error */
 }
 
 .search-container>* {
@@ -24,12 +22,19 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 38px;
+    margin: 0%;
 }
 
 .all-search-parameters {
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.advSearch{
+    margin-top: 25px;
+    align-items: flex-end;
 }
 
 .search-parameters {
@@ -40,9 +45,9 @@
     width: 85%;
 }
 
-.search-parameters>div {
+.search-parameters > div {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .stateAndDistrict {
@@ -96,13 +101,17 @@
     cursor: pointer;
 }
 
-.stateAndDistrict>div {
+.stateAndDistrict > div {
     width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 4px;
+}
+
+.advSearch-stateAndDistrict{
+    margin-bottom: 0% !important;
 }
 
 .search-input-conatainer {
@@ -160,7 +169,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px 10px;
+    padding: 10px 0px;
     margin-bottom: 0% !important;
     width: 100%;
 }
@@ -175,7 +184,7 @@
     align-items: center;
 
     width: fit-content;
-    margin: 10px 20px 10px 0px;
+    margin: 10px 20px 0px 0px;
 
     padding: 10px 15px;
     background-color: #4993D7;
