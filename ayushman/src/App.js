@@ -21,7 +21,7 @@ function App() {
     
     <Header/>
     <Navbar/>
-    <Search  searchHospital = {true}  /> 
+    <Search  advanceSearch={false} /> 
     </div>
   );
 }
