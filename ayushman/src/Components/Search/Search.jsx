@@ -12,8 +12,8 @@ export default function Search(props) {
   let selectedState = ""
   let selectedDistrict = ""
 
-  const State = [ ]
-  const District = [ ]
+  const State = []
+  const District = []
 
   function stateDropdown() {
     myJSON.states.forEach(element => {
@@ -25,28 +25,28 @@ export default function Search(props) {
 
 
 
-  function districtDropdown( ) {
+  function districtDropdown() {
 
 
     myJSON.states.forEach(element => {
-      
-      if( element.state === selectedState ){
+
+      if (element.state === selectedState) {
         District.length = 0 // Empty District Array Before Push so that if Other State is Selected Distrcits will be Overidden
-          element.districts.forEach( district =>{
-              const obj = { label: district, value: district }
-              District.push(obj)
-          })
-        }
+        element.districts.forEach(district => {
+          const obj = { label: district, value: district }
+          District.push(obj)
+        })
+      }
 
     });
   }
 
-  function setState( value ){
+  function setState(value) {
     selectedState = value
     districtDropdown()
   }
 
-  function setDistrict( value ){
+  function setDistrict(value) {
     selectedDistrict = value
     console.log(selectedDistrict)
   }
@@ -76,8 +76,8 @@ export default function Search(props) {
     if (!selectedOptions.includes(value)) {
       selectedOptions.push(value)
       console.log(
-         ( myJSON.states[0].state)
-        )
+        (myJSON.states[0].state)
+      )
       showTags(value)
     }
 
@@ -169,7 +169,7 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State"  />
+                  <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
                 </div>
               </div>
 
@@ -203,27 +203,27 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input" 
-                  onChange={
-                    opt => {
-                      selectOption(opt.value) 
-                      setState(opt.value)
+                  <Select styles={customStyles} options={State} className="search-input"
+                    onChange={
+                      opt => {
+                        selectOption(opt.value)
+                        setState(opt.value)
+                      }
                     }
-                  }
-                   id='state-input' placeholder="State" value="State" />
+                    id='state-input' placeholder="State" value="State" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input" 
-                                    onChange={
-                                      opt => {
-                                        selectOption(opt.value) 
-                                        setDistrict(opt.value)
-                                      }
-                                    }
-                   id='state-input' value="District" placeholder="District" />
+                  <Select styles={customStyles} options={District} className="search-input"
+                    onChange={
+                      opt => {
+                        selectOption(opt.value)
+                        setDistrict(opt.value)
+                      }
+                    }
+                    id='state-input' value="District" placeholder="District" />
                 </div>
               </div>
 
