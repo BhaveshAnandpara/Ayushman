@@ -18,11 +18,9 @@ import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
 function App() {
   return (
     <div className="App">
-
-
     <Header/>
     <Navbar/>
-    <Search  advanceSearch={false} /> 
+    <Search  advanceSearch={true} /> 
     </div>
   );
 }
