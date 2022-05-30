@@ -22,7 +22,7 @@ function App() {
       <Navbar />
 
     
-    <Search/>
+    
       <div className='search-box '>
         <Search advanceSearch={false} />
       </div>
