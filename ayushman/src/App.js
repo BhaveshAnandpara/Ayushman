@@ -25,6 +25,10 @@ function App() {
       <hospitalProfile/>
 
 
+    <Header/>
+    <Navbar/>
+    {/* <Search/> */}
+    <HospitalCard/>
     </div>
   );
 }
