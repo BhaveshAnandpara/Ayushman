@@ -21,20 +21,8 @@ function App() {
       <Header />
       <Navbar />
 
-<<<<<<< HEAD
     
     <Search/>
-=======
-      <div className='search-box '>
-        <Search advanceSearch={false} />
-      </div>
-
-      <p>Advance Search</p>
-      
-      <div className='search-box '>
-        <Search advanceSearch={true} />
-      </div>
->>>>>>> 646eb5913be94b0f01c6a2257228a320e6a929b1
 
     </div>
   );
