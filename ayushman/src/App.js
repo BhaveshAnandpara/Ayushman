@@ -20,10 +20,7 @@ function App() {
     <div className="App">
 
     
-      <HospitalProfile/>
-      <Login/>
-
-      <hospitalProfile/>
+    <Search/>
 
     </div>
   );
