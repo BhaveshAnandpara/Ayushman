@@ -21,8 +21,17 @@ function App() {
       <Header />
       <Navbar />
 
+  
     
-    <Search/>
+      <div className='search-box '>
+        <Search advanceSearch={false} />
+      </div>
+
+      <p>Advance Search</p>
+      
+      <div className='search-box '>
+        <Search advanceSearch={true} />
+      </div>
 
     </div>
   );
