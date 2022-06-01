@@ -34,15 +34,15 @@ router.post('/sendOTP', (req, res) => {
 
     const fullHash = `${hash}.${expires}`
 
-    client.messages.create({
-        body : `Your OTP for LOGIN is ${OTP}`,
-        from : +19106684570,
-        to : `+91${phoneNo}`
-    }).then((msg) => {
-        console.log(msg)
-    } ).catch( (err)=>{
-        console.log(err)
-    })
+    // client.messages.create({
+    //     body : `Your OTP for LOGIN is ${OTP}`,
+    //     from : +19106684570,
+    //     to : `+91${phoneNo}`
+    // }).then((msg) => {
+    //     console.log(msg)
+    // } ).catch( (err)=>{
+    //     console.log(err)
+    // })
 
     res.status(200).send({ phoneNo, hash: fullHash })
 
