@@ -4,7 +4,6 @@ const dotenv = require("dotenv")
 dotenv.config()
 const jwt = require('jsonwebtoken')
 let refreshTokens = []
-const cookiePasrser = require('cookie-parser')
 
 
 const accountSid = process.env.ACCOUNT_SID
@@ -13,28 +12,23 @@ const client = require('twilio')(accountSid, authToken);
 
 const JWT_AUTH_TOKEN = process.env.JWT_AUTH_TOKEN
 const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_TOKEN
-const crypto = require('crypto')
+const crypto = require('crypto') //For Hashing
 
 const smsKey = process.env.SMS_SECRET_KEY
 
 
-
-router.post("/login", async (req, res) => {
-    res.status(200).json("I am in Login")
-})
-
 router.post('/sendOTP', (req, res) => {
-    const phoneNo = req.body.phoneNo
-    const OTP = Math.floor(Math.random() * 1000000)
+    const phoneNo = req.body.phoneNo     
+    const OTP = Math.floor(Math.random() * 1000000)  //6 Digit OTP
     const timeLimit = 2 * 60 * 1000 // 2mins in milliseconds
-    const expires = Date.now() + timeLimit
+    const expires = Date.now() + timeLimit  
 
-    const data = `${phoneNo}.${OTP}.${expires}` //Hash for JWT
-    const hash = crypto.createHmac('sha256', smsKey).update(data).digest('hex')
+    const data = `${phoneNo}.${OTP}.${expires}` //Hash Data for JWT
+    const hash = crypto.createHmac('sha256', smsKey).update(data).digest('hex') //Hashing of Data
 
-    const fullHash = `${hash}.${expires}`
+    const fullHash = `${hash}.${expires}` //hash with Expiry
 
-    // client.messages.create({
+    // client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
     //     body : `Your OTP for LOGIN is ${OTP}`,
     //     from : +19106684570,
     //     to : `+91${phoneNo}`
@@ -52,18 +46,18 @@ router.post('/verifyOTP', (req, res) => {
     const phoneNo = req.body.phoneNo
     const hash = req.body.hash
     const OTP = req.body.OTP
-    let [hashValue, expires] = hash.split('.')
+    let [hashValue, expires] = hash.split('.') //Taking the hash and Breaking it into hashValue and Exprixy
 
     let now = Date.now()
 
     if (now > parseInt(expires)) {
-        return res.status(504).send({ msg: ' TimeOut' })
+        return res.status(504).send({ msg: ' TimeOut' })  //IF Expired after 2 min
     }
 
     const data = `${phoneNo}.${OTP}.${expires}` //Hash for JWT
-    const newCalculatedHash = crypto.createHmac('sha256', smsKey).update(data).digest('hex')
+    const newCalculatedHash = crypto.createHmac('sha256', smsKey).update(data).digest('hex') //Creates Hash Again
 
-    if (newCalculatedHash === hashValue) {
+    if (newCalculatedHash === hashValue) {  //If Newly created hash and hash provided by user is same
         const accessToken = jwt.sign({ data: phoneNo }, `${JWT_AUTH_TOKEN}`, { expiresIn: '30s' })
         const refreshToken = jwt.sign({ data: phoneNo }, `${JWT_REFRESH_TOKEN}`, { expiresIn: '1y' })
         refreshTokens.push(refreshToken)
@@ -76,7 +70,7 @@ router.post('/verifyOTP', (req, res) => {
             .send({ msg: "device Confirmed" })
 
     } else {
-        return res.status(400).send({ verification: false, msg: "Verification Failed" })
+        return res.status(400).send({ verification: false, msg: "Invalid OTP" })
     }
 
 
@@ -100,7 +94,7 @@ async function authenticateUser(req, res, next) {
 }
 
 router.post('/refresh', (req, res) => {
-    const refreshToken = req.cookies.refres
+    const refreshToken = req.cookies.refreshToken
     if (!refreshToken) return res.status(403).send({ msg: 'Refresh Token Not found , Please Login Again' })
     if (!refreshTokens.includes(refreshToken)) return res.status(403).send({ msg: "refresh Token Blocked , Login Again" })
 
