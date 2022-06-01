@@ -2,6 +2,10 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+const cookiePasrser = require('cookie-parser')
+const cors = require('cors')
+
+
 
 const authRoute = require("../api/Routes/auth")
 
@@ -15,8 +19,11 @@ async function main() {
 
 
 app.use(express.json())
+app.use(cookiePasrser())
+app.use(cors({origin:'http://localhost:8001' , credentials : true}))
 
 app.use("/api/auth" , authRoute)
+app.use("/auth" , authRoute)
 
 app.listen( 8001 , ()=>{
     console.log( "Backend Server is Running" );
