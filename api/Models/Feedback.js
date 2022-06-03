@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const UserSchema = new mongoose.Schema({
+const FeedbackSchema = new mongoose.Schema({
     mobile_no : { type:Number , required:true , unique:true },
     hospital_name : { type:String , required:true },
     admission_date : { type:Number , required:true },
