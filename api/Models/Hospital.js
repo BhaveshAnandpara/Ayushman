@@ -1,14 +1,17 @@
 const mongoose = require("mongoose")
 
 const HospitalSchema = new mongoose.Schema({
-    name : { type:String , required:true},
-    phone_no : { type:Number , required:true , unique:true },
-    email_id : { type:String , unique:true },
-    user_password : { type:String , required:true },
+    Hosp_id : { type:String , required:true },
+    Hosp_Password : { type:String , required:true },
+    Hosp_Name : { type:String , required:true },
+    Hosp_Address : { type:Array , required:true },
+    Hosp_Type : { type:String , required:true },
+    Hosp_Branch : { type:Array , required:true },
     no_of_feedbacks : { type : Number },
-    feedback : { type:Array },
-    grievance : { type:Array },
+    Phone_No : { type:Array },
+    Facilities : { type:Array , required:true },
+    Inventory : { type:Array , required:true },
     no_of_grievances : { type : Number },
 })
 
-    module.exports = mongoose.model("Hospital", HospitalSchema); //will create a Schema Name User Which can be Accessed using 'new' keyword just like creating object
+    module.exports = mongoose.model("Hospital", HospitalSchema); //will create a Schema Name Hospital Which can be Accessed using 'new' keyword just like creating object
