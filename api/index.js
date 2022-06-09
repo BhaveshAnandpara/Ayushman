@@ -9,6 +9,7 @@ const cors = require('cors')
 
 const authRoute = require("../api/Routes/auth")
 const hospAuthRoute = require("../api/Routes/hospAuth")
+const hospital = require("../api/Routes/hospital")
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(cors({origin:'http://localhost:8001' , credentials : true})) //For Cooki
 
 app.use("/auth" , authRoute)
 app.use("/hospAuth" , hospAuthRoute)
+app.use("/hospital" , hospital)
 
 app.listen( 8001 , ()=>{
     console.log( "Backend Server is Running" );
