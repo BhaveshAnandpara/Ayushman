@@ -4,7 +4,7 @@ import '../Login/Login.css'
 export default function Login() {
   return (
 
-    <div className='Login-main'>
+    <div className='login-main'>
       <div className='login-items'>
         <span> Patient </span>
         <span> Hospital </span>
@@ -34,7 +34,7 @@ export default function Login() {
 
         </div>
       </div>
-      <div className='hospital-login-container'>
+      <div className='hospital-login-container border'>
         <div className='hospital-id'>
           <input type="text" placeholder='Hospital ID'></input>
         </div>
@@ -46,7 +46,7 @@ export default function Login() {
 
       </div>
 
-      <div className='medical-login-container'>
+      <div className='medical-login-container border'>
       <div className='authority-id'>
           <input type="text" placeholder='Authority ID'></input>
         </div>
