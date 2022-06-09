@@ -13,10 +13,23 @@ router.post( '/basicInfo' , async( req,res)=>{
     const state = req.body.state
     const district = req.body.district
     const pincode = req.body.pincode
+    const map_url = req.body.mapurl
     const typeOfHosp = req.body.typeOfHosp
+    const otherBranch = req.body.branch
 
     const newHosp = new Hospital({
         hosp_name : name,
+        hosp_address : {
+            address_line1 : address,
+            district : district,
+            state : state,
+            pincode : pincode,
+            map_url : map_url   
+            }, 
+        hosp_profileImg : hospImage,
+        host_type : typeOfHosp,
+        phone_no  : phoneNos, 
+        hosp_branch : otherBranch
     })
 
 
