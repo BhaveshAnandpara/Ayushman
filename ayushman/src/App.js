@@ -14,7 +14,7 @@ import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
 import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
-
+import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
 
 
 function App() {
