@@ -12,6 +12,8 @@ const smsKey = process.env.SMS_SECRET_KEY
 
 router.post('/hospRegister' , async(req,res)=>{
 
-    
+    const hospName = req.body.name
+    const password = req.body.password
+
 
 })
