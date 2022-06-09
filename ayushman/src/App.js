@@ -21,7 +21,7 @@ function App() {
       {/* <Header />
       <Navbar />
 
-    
+  
     
       <div className='search-box '>
         <Search advanceSearch={false} />
