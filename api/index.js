@@ -8,6 +8,7 @@ const cors = require('cors')
 
 
 const authRoute = require("../api/Routes/auth")
+const hospAuthRoute = require("../api/Routes/hospAuth")
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(cookiePasrser())
 app.use(cors({origin:'http://localhost:8001' , credentials : true})) //For Cookies
 
 app.use("/auth" , authRoute)
+app.use("/hospAuth" , hospAuthRoute)
 
 app.listen( 8001 , ()=>{
     console.log( "Backend Server is Running" );
