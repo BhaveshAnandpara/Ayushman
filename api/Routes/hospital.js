@@ -15,6 +15,11 @@ router.post( '/basicInfo' , async( req,res)=>{
     const pincode = req.body.pincode
     const typeOfHosp = req.body.typeOfHosp
 
+    const newHosp = new Hospital({
+        hosp_name : name,
+    })
+
+
 } )
 
 module.exports = router
