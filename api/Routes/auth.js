@@ -157,10 +157,6 @@ router.post('/resetPassword' , async(req,res)=>{
 
 })
 
-router.post()
-
-router.post()
-
 
 router.get('/logout', (req, res) => {
     res.clearCookie('refreshToken').clearCookie('accessToken').clearCookie('authSession').clearCookie('resfreshTokenID').send({ msg: "Logout " })
