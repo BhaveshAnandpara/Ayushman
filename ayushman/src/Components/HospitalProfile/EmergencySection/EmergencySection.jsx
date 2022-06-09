@@ -1,5 +1,5 @@
 import React from 'react'
-import bedIcon from '../../Assets/Icons/bed-icon.svg'
+import bedIcon from '../../../Assets/Icons/bed-icon.png'
 
 export default function EmergencySection() {
   return (
