@@ -1,0 +1,27 @@
+.hosp-profile-section {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.hospImg{
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+.hospImg::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-image: url("../../../Assets/Icons/camera.svg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: var(--ligh-blue);
+}

@@ -4,7 +4,7 @@ const dotenv = require("dotenv")
 dotenv.config()
 const jwt = require('jsonwebtoken')
 
-router.post( '/basicInfo' , async( req,res)=>{
+router.post('/basicInfo', (req, res) => {
 
     const hospImage = req.body.image
     const name = req.body.name
@@ -17,22 +17,34 @@ router.post( '/basicInfo' , async( req,res)=>{
     const typeOfHosp = req.body.typeOfHosp
     const otherBranch = req.body.branch
 
+
     const newHosp = new Hospital({
-        hosp_name : name,
-        hosp_address : {
-            address_line1 : address,
-            district : district,
-            state : state,
-            pincode : pincode,
-            map_url : map_url   
-            }, 
-        hosp_profileImg : hospImage,
-        host_type : typeOfHosp,
-        phone_no  : phoneNos, 
-        hosp_branch : otherBranch
+        hosp_name: name,
+        hosp_address: {
+            address_line1: address,
+            district: district,
+            state: state,
+            pincode: pincode,
+            map_url: map_url
+        },
+        hosp_profileImg: hospImage,
+        host_type: typeOfHosp,
+        phone_no: phoneNos,
+        hosp_branch: otherBranch,
+        no_of_feedbacks: " ",
+        inventory: {
+            item_name: " ",
+            is_for_emergency: true,
+            unit: " "
+        }
     })
+    const hosp =  newHosp.save()
+    try {
+        res.status(201).json("Hospital Created")
+    } catch (err) {
+        res.status(404).json(err)
+    }
 
-
-} )
+})
 
 module.exports = router
