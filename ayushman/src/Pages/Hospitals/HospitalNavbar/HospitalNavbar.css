@@ -1,0 +1,32 @@
+.hospNavbar {
+    width: 99%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-blue-bg);
+
+}
+
+
+.hosp-nav-item {
+    color: var(--subtitle);
+    text-align: center;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 39px;
+    padding: 10px 0px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.active-nav{
+    background-color: var(--subtitle);
+    color: var(--light-blue-bg) !important;
+
+}
+
+.hosp-nav-item > p {
+    text-align: center;
+}

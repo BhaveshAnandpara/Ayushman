@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 
 import Home from './Pages/Home/Home'
 import ApproximateCost from './Pages/Approximate-Cost/Approximate-cost'
@@ -16,6 +20,7 @@ import Search from './Components/Search/Search.jsx';
 import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
 
+import Hospital from './Pages/Hospitals/Hospital'
 
 function App() {
 
@@ -26,10 +31,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Navbar />
-
-      <section className=" search-bar-section">
+      <BrowserRouter>
+        <Routes>
+          {/* <section className=" search-bar-section">
 
         <div className='search-box '>
           <Search advanceSearch={false} />
@@ -48,7 +52,18 @@ function App() {
         </div>
 
 
-      </section>
+      </section> */}
+
+          <Route exact path="/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
+          <Route exact path="/update" element={<Hospital value={"update"} />}></Route>
+          <Route exact path="/facilities" element={<Hospital value={"facilities"} />}></Route>
+          <Route exact path="/inventory" element={<Hospital value={"inventory"} />}></Route>
+          <Route exact path="/rates" element={<Hospital value={"rates"} />}></Route>
+          <Route exact path="/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
+        </Routes>
+      </BrowserRouter>
+
+
 
     </div>
   );
