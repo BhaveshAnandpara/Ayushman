@@ -229,3 +229,24 @@
 #search-checkbox{
     cursor: pointer;
 }
+
+.pincode-input{
+    font-size: 18px;
+    width: 15em;
+    padding: 5px 0px;
+    border: none;
+    color: var(--title);
+    outline: none;
+    background-color: var(--light-blue-bg);
+    border-radius: 3px;
+    padding: 14px 10px 14px 25px;
+}
+
+.stateAndDistrict-dashboard{
+    display: flex;
+    align-items: center;
+}
+
+.stateAndDistrict-dashboard > div{
+    margin: 0px 23px;
+}

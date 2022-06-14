@@ -11,6 +11,7 @@ export default function Search(props) {
 
   let selectedState = ""
   let selectedDistrict = ""
+  let pincode = ""
 
   const State = []
   const District = []
@@ -48,7 +49,11 @@ export default function Search(props) {
 
   function setDistrict(value) {
     selectedDistrict = value
-    console.log(selectedDistrict)
+  }
+
+  
+  function setPincode() {
+    console.log( document.querySelector(".pincode-input").value)
   }
 
   stateDropdown()
@@ -116,6 +121,10 @@ export default function Search(props) {
 
   }
 
+  const dashboardStyle = {
+      width:"100%"
+  }
+
 
   const customStyles = {
     input: (provided, state) => ({
@@ -147,18 +156,19 @@ export default function Search(props) {
     })
   }
 
-  return (
+  return (<>
+  {
+    !props.stateAndDistrictOnly && 
     <div className='search-container '>
 
       {/* Normal Search */}
 
-      {!props.advanceSearch &&
+      {(!props.advanceSearch && !props.stateAndDistrictOnly) &&
         <p className="container-title">Search Hospitals</p>
       }
 
 
-
-      {!props.advanceSearch &&
+      {(!props.advanceSearch && !props.stateAndDistrictOnly) &&
         <div className="all-search-parameters ">
           <div className="search-parameters ">
 
@@ -251,11 +261,48 @@ export default function Search(props) {
         </div>
 
       }
-
-
-
-
-
     </div>
+  }
+
+{props.stateAndDistrictOnly &&
+
+    <div className="search-container-dashboard" style={dashboardStyle}>
+
+        <div className="all-search-parameters ">
+          <div className="search-parameters-dashboard " style={dashboardStyle} >
+
+            <div className="stateAndDistrict-dashboard" style={dashboardStyle}>
+
+              <div className=''>
+                <div className='search-input-conatainer'>
+                  <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                </div>
+              </div>
+
+              <div className=''>
+                <div className='search-input-conatainer'>
+                  <Select styles={customStyles} options={District} className="search-input" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
+                </div>
+              </div>
+
+              <div className=''>
+                <div className='search-input-conatainer'>
+                  <input type="text" className='pincode-input' onBlur={ ()=>{
+                    setPincode()} }   placeholder='Pin code'></input>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+      }
+
+
+</>
+
   )
 }
