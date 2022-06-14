@@ -1,27 +1,111 @@
-.hosp-profile-section {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.basicInfoContentForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.hospImg{
-    display: block;
-    width: 300px;
-    height: 300px;
+
+.basicInfoContentForm>div:nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 
-.hospImg::after{
-    content: " ";
-    display: block;
+.regionInput{
+    width: 100%;
+}
+
+.basicInfoContentForm>div>div:nth-child(1)>img:first-child {
+    width: 120px;
+    height: 120px;
+    border-radius: 4px;
+    padding: 25px 30px;
+    background-color: var(--light-blue-bg);
+}
+
+.editImg>img {
+    width: 20px;
+    height: 20px;
+}
+
+.editImg>input {
+    /* opacity: 0; */
     position: absolute;
-    width: 60px;
-    height: 60px;
+    opacity: 0;
+}
+
+.editImg {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 100%;
-    background-image: url("../../../Assets/Icons/camera.svg");
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-    background-color: var(--ligh-blue);
+    background-color: var(--text-blue);
+    position: absolute;
+    transform: translate(160px, -35px);
+    overflow: hidden;
+}
+
+.basicInfoform {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 80%;
+    height: 200px;
+}
+
+.basicInfoform>span {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--title);
+    background-color: var(--light-blue-bg);
+    padding: 3px 45px;
+}
+.basicInfoPhoneNo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.basicInfoform > input , .phoneNo-container > input{
+    color: var(--text-blue);
+    background-color: var(--light-blue-bg);
+    border: none;
+    outline: none;
+    padding: 8px 10px 8px 20px;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    width: 90%;
+}
+
+#phoneNo{
+    width: 240px;
+    margin-right: 10px;
+}
+
+
+.basicInfoform > input::placeholder , .phoneNo-container > input::placeholder{
+    color: var(--text-blue);
+}
+
+.addBtn{
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-family: var(--primary-font);
+    background-color: var(--light-blue-bg);
+    color: var(--title);
+
 }
