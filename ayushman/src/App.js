@@ -18,11 +18,12 @@ import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
 import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
-import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
+import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection';
 
-import Hospital from './Pages/Hospitals/Hospital'
+import Hospital from './Pages/Hospitals/Hospital';
 
 function App() {
+ 
 
   const [advSearch, setAdvSearch] = useState(true)
 
@@ -30,7 +31,10 @@ function App() {
 
 
   return (
+   
     <div className="App">
+       <EmergencySection></EmergencySection>
+     
       <BrowserRouter>
         <Routes>
           {/* <section className=" search-bar-section">
@@ -66,6 +70,7 @@ function App() {
 
 
     </div>
+    
   );
 }
 
