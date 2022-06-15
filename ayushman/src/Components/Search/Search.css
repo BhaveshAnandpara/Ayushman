@@ -187,8 +187,8 @@
     margin: 10px 20px 0px 0px;
 
     padding: 10px 15px;
-    background-color: #4993D7;
-
+    background-color: var(--text-blue);
+    color: var(--light-blue-bg);
 
 
 }

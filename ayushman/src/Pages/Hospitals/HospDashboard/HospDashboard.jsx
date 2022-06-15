@@ -14,11 +14,10 @@ import HospitalCards from '../../../Components/HospitalCards/HospitalCards';
 
 export default function HospDashboard() {
 
-  const [branch , setBranch] = useState('')
-
+  let branch = ""
+  let otherBranches = []
 
   let phoneNoCount = 1
-  let branchCount = 0
 
   const typeOfHospitals = [
     { label: 'Private Hospital', value: 'Private Hospital' },
@@ -41,28 +40,51 @@ export default function HospDashboard() {
   }
 
 
-  const getBranchData = (childData) =>{
-      setBranch(childData)
-      addBranch(childData)  
+  const getBranchData = (childData) => {
+    branch = childData
+
+    {!otherBranches.includes(branch) &&
+      otherBranches.push(branch)
+    }
+    addBranch()
   }
 
-  const addBranch = (branch)=>{
+  const addBranch = () => {
 
-      const branchContainer = document.querySelector(".otherBranch-container");
+    const branchContainer = document.querySelector(".otherBranch-container");
+    const selectHosp = document.querySelector(".selectHosp");
+
     const root = ReactDOM.createRoot(branchContainer);
+    const selectRoot = ReactDOM.createRoot(selectHosp);
+    console.log(otherBranches)
 
-    console.log(branch)
-      
-    root.render( <HospitalCards name={branch} isOtherBranch={true}/> )
+    selectRoot.render(
+      <></>
+    )
+
+    root.render(<>
+      {
+        otherBranches.map((ele) => {
+          return(
+          <HospitalCards name={ele} isOtherBranch={true} />
+          )
+        })
+      }
+    </>
+    )
+
 
 
   }
 
-  const selectBranch = ()=>{
-    const branchContainer = document.querySelector(".otherBranch-container")
+  const selectBranch = () => {
+    const branchContainer = document.querySelector(".selectHosp")
     const root = ReactDOM.createRoot(branchContainer)
 
-    root.render(<Search searchHospitalOnly={true} getBranchData={getBranchData} />)
+    root.render(
+      <Search searchHospitalOnly={true} getBranchData={getBranchData} />
+    )
+
   }
 
   const titleStyle = {
@@ -148,13 +170,16 @@ export default function HospDashboard() {
 
             <p className='container-title' style={titleStyle}>Other Branches</p>
 
-            <div className='otherBranches'>
-              <div className="otherBranch-container">
+            <div className='otherBranches '>
+              <div className="otherBranch-container ">
 
               </div>
-               <span className="addBtn" onClick={()=>{
+              <div className="selectHosp">
+
+              </div>
+              <span className="addBtn" onClick={() => {
                 selectBranch()
-               }}>+</span>
+              }}>+</span>
             </div>
 
           </div>

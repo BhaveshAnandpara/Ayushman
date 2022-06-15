@@ -107,6 +107,10 @@
     font-family: var(--primary-font);
     background-color: var(--light-blue-bg);
     color: var(--title);
+    max-height: 25px;
+    max-width: 25px;
+    margin-left: 30px;
+    cursor: pointer;
 
 }
 
