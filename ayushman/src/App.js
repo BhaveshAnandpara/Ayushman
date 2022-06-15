@@ -33,7 +33,9 @@ function App() {
         <Routes>
 
 
+          <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/findHospital" element={<Home/>}></Route>
+          <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
           <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/hospitalDashboard/update" element={<Hospital value={"update"} />}></Route>
