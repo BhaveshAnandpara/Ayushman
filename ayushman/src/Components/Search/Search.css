@@ -224,6 +224,7 @@
     font-size: 18px;
     line-height: 32px;
     color: var(--subtitle);
+    padding: 0px 45px;
 }
 
 #search-checkbox{

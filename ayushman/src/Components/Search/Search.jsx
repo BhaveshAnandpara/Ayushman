@@ -156,19 +156,25 @@ export default function Search(props) {
     })
   }
 
+  const hospSearch = {
+    position : "absolute ! important"
+  }
+
   return (<>
   {
-    !props.stateAndDistrictOnly && 
+    (!props.stateAndDistrictOnly &&  !props.searchHospitalOnly) &&
     <div className='search-container '>
 
       {/* Normal Search */}
 
-      {(!props.advanceSearch && !props.stateAndDistrictOnly) &&
+              
+      {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
         <p className="container-title">Search Hospitals</p>
       }
 
 
-      {(!props.advanceSearch && !props.stateAndDistrictOnly) &&
+            
+      {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
         <div className="all-search-parameters ">
           <div className="search-parameters ">
 
@@ -301,6 +307,24 @@ export default function Search(props) {
 
       }
 
+{props.searchHospitalOnly &&
+
+    <div className="search-container-dashboard" style={dashboardStyle}>
+
+        <div className="all-search-parameters ">
+          <div className="search-parameters-dashboard " style={dashboardStyle} >
+
+            <div className="stateAndDistrict-dashboard" style={dashboardStyle}>
+
+              <Select styles={customStyles}  options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+      }
 
 </>
 
