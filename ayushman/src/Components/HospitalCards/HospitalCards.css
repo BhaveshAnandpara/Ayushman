@@ -1,5 +1,5 @@
 
-.card{
+.card , .branch-card{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,20 @@
     font-family: var(--primary-font);
 }
 
- .card-img{
+.branch-card{
+    max-width: 500px;
+    min-width: 500px;
+    align-items: flex-start;
+    padding: 20px 20px;
+    position: relative;
+    display: inline-flex;
+    left: 0%;
+    transform: translateX(0%);
+}
+
+
+
+ .card-img , .branch-card-img{
     display: inline-block;
     background-image: url("../../Assets/Images/hospImage.png");
     background-size: cover;
@@ -27,6 +40,12 @@
     opacity: 0.8;
 
 } 
+
+.branch-card-img{
+    width: 10em;
+    height: 9em;
+}
+
 
 .card-info{
     display: flex;
@@ -83,7 +102,7 @@
     margin: 0%;
 }
 
-.card-hosp-name{
+.card-hosp-name , .branch-card-hosp-name{
     font-style: normal;
     font-weight: 600;
     font-size: 62px;
@@ -93,7 +112,12 @@
     color: var(--title);
 }
 
-.card-address{
+.branch-card-hosp-name{
+    font-size: 32px;
+    line-height: 30px;
+}
+
+.card-address , .branch-card-address{
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
@@ -104,8 +128,23 @@
     color: var(--subtitle);
 }
 
+.branch-card-address{
+    font-size: 12px;
+}
+
 .card-hosp-text{
     display: block;
     width: 100%;
     padding-left: 10px;
+}
+
+.branchTags{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.branch-tags{
+    font-size: 12px;
 }

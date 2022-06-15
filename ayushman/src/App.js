@@ -17,15 +17,18 @@ import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
+<<<<<<< HEAD
 import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection';
+=======
+import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
+>>>>>>> 354989a4db5f04573895fd9ab452448862a2e6a7
 
 import Hospital from './Pages/Hospitals/Hospital';
 
 function App() {
  
 
-  const [advSearch, setAdvSearch] = useState(true)
 
 
 
@@ -37,33 +40,18 @@ function App() {
      
       <BrowserRouter>
         <Routes>
-          {/* <section className=" search-bar-section">
-
-        <div className='search-box '>
-          <Search advanceSearch={false} />
-        </div>
-
-        <div className="advSearchToggle ">
-
-          <p onClick={()=>{
-            setAdvSearch(!advSearch)
-            }} className=" advSearchBtn" >Advance Search</p>
-
-          <div className={`search-box ${ advSearch ? " displayToggle" : "" }`} >
-            <Search advanceSearch={true} />
-          </div>
-
-        </div>
 
 
-      </section> */}
-
-          <Route exact path="/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
-          <Route exact path="/update" element={<Hospital value={"update"} />}></Route>
-          <Route exact path="/facilities" element={<Hospital value={"facilities"} />}></Route>
-          <Route exact path="/inventory" element={<Hospital value={"inventory"} />}></Route>
-          <Route exact path="/rates" element={<Hospital value={"rates"} />}></Route>
-          <Route exact path="/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
+          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/findHospital" element={<Home/>}></Route>
+          <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
+          <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
+          <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
+          <Route exact path="/hospitalDashboard/update" element={<Hospital value={"update"} />}></Route>
+          <Route exact path="/hospitalDashboard/facilities" element={<Hospital value={"facilities"} />}></Route>
+          <Route exact path="/hospitalDashboard/inventory" element={<Hospital value={"inventory"} />}></Route>
+          <Route exact path="/hospitalDashboard/rates" element={<Hospital value={"rates"} />}></Route>
+          <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
         </Routes>
       </BrowserRouter>
 
