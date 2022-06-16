@@ -12,7 +12,7 @@ export default function EmergencySection() {
         <div className='EmergencySection2'>
             <p>Ambulance Service</p>
         </div>
-    </div>
+    </div >
 
   )
 }
