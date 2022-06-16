@@ -17,12 +17,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
-<<<<<<< HEAD
-import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
-import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection';
-=======
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
->>>>>>> 354989a4db5f04573895fd9ab452448862a2e6a7
 
 import Hospital from './Pages/Hospitals/Hospital';
 
