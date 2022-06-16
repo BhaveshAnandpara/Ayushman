@@ -48,7 +48,7 @@ export default function EmergencySection() {
 
 
 
-      </div>
+    
       <div className='EmergencySection'>
         <fieldset>
           <legend>Emergency</legend>
@@ -78,33 +78,50 @@ export default function EmergencySection() {
               <p className='names'>Total Ambulance</p>
               <p className='count'>10</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Cardiac Ambulance</p>
-              <p className='count'>10</p></div>
+              <p className='count'>25/- per km</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Basic Life Support</p>
-              <p className='count'>542</p></div>
+              <p className='count'>15/- per km</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Hearse Van</p>
-              <p className='count'>542</p></div>
+              <p className='count'>12/- per km</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Doctor Charges</p>
-              <p className='count'>542</p></div>
+              <p className='count'>550/- per visit</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Nursing Staff Charges</p>
-              <p className='count'>542</p></div>
+              <p className='count'>330/- per visit</p></div>
             <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><p className='names'>Attendent Charges</p>
-              <p className='count'>542</p></div>
-
-
-
-
-
-
+              <p className='count'>250/- per visit</p></div>
           </div>
         </fieldset>
       </div>
+
       <div className='facilities'>
         <fieldset>
           <legend>facilities</legend>
-          <img className='bed-icon1' src={bedIcon} alt="bed-icon" />
+          <div className='facilities1'>
+          <div className='ambulance'><div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Ambulance</span>
+              </div>
+          </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Laboratory</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>ATM</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Waiting Launge</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Pharmacy</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Cafeteria</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Blood Bank</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Radiology</span>
+              </div>
+          <div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Parking</span>
+              </div>
+            
+            </div>
+
         </fieldset>
       </div>
 
-    </>
+      </>
   )
 }
