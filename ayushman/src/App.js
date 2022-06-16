@@ -19,17 +19,20 @@ import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
 
-import Hospital from './Pages/Hospitals/Hospital'
+import Hospital from './Pages/Hospitals/Hospital';
 
 function App() {
+ 
 
 
 
 
 
   return (
+   
     <div className="App">
-      <EmergencySection></EmergencySection>
+       <EmergencySection></EmergencySection>
+     
       <BrowserRouter>
         <Routes>
 
@@ -50,6 +53,7 @@ function App() {
 
 
     </div>
+    
   );
 }
 

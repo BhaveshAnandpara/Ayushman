@@ -1,0 +1,51 @@
+.path-items > span{
+    flex-direction: row;
+    padding: 0 27px 0  ;
+    border: 0ch;
+}
+.hospital-info-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.hospital-info-container > div{
+    text-align: center;
+    margin: 10px;
+    width: 500px;
+}
+.types-hos{
+    display: flex;
+}
+.types-hos>div{
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 100px;
+}
+.type1{
+    display: inline-block;
+        background-color:#D5EBFF ;
+        /* margin: 50px;
+        width: 80px;
+        height: 51px;
+        padding: 5px;
+        block-size: 30px;
+        border: 1px solid blue;      */
+        
+     
+}
+.type2{
+    display: inline-block;
+    background-color:#D5EBFF ;
+}
+.EmergencySection1{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 10px;
+    background-color:#D5EBFF ;
+    padding: 10px;
+
+}
+.EmergencySection2{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ;
+}
