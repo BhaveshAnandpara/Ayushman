@@ -37,6 +37,8 @@
     display: inline-block;
     background-color:#D5EBFF ;
 }
+
+
 .EmergencySection1{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -48,4 +50,30 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto ;
     gap: 60px;
+}
+.names{
+    width: 159px;
+height: 40px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 112%;
+color: #3E80BC;
+}
+
+.count{
+    width: 199px;
+height: 56px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 200%;
+color: #0D4F8C;
+flex: none;
+order: 2;
+flex-grow: 0;
 }

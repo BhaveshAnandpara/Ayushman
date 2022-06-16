@@ -3,6 +3,7 @@
     grid-template-columns: auto auto auto ;
     padding: 30px 10px 0px 20px;
     gap: 60px;
+    background-color: var(--ultra-light);
 }
 
 .ambulance {
@@ -16,4 +17,12 @@
 }
 .names1{
     padding: 0px 0px 0px 20px;
+    width: 147px;
+height: 38px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 38px;
 }
