@@ -1,0 +1,19 @@
+.facilities1{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    padding: 30px 10px 0px 20px;
+    gap: 60px;
+}
+
+.ambulance {
+    flex-direction: row;
+    
+}
+.bed-icon1{
+    padding: 20px 10px 20px 10px;
+    background-color:#D5EBFF ;
+    border-radius: 10%;
+}
+.names1{
+    padding: 0px 0px 0px 20px;
+}

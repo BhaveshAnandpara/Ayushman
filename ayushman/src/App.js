@@ -18,6 +18,7 @@ import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
+import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSection/FacilitiesSection'
 
 import Hospital from './Pages/Hospitals/Hospital';
 
@@ -32,6 +33,7 @@ function App() {
    
     <div className="App">
        <EmergencySection></EmergencySection>
+       <FacilitiesSection></FacilitiesSection>
      
       <BrowserRouter>
         <Routes>
