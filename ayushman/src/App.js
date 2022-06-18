@@ -20,6 +20,7 @@ import Search from './Components/Search/Search.jsx';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
 
 import Hospital from './Pages/Hospitals/Hospital'
+import Test from './Pages/test';
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
         <Routes>
 
 
-          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/test" element={<Test/>}></Route>
           <Route exact path="/findHospital" element={<Home/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
           <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
