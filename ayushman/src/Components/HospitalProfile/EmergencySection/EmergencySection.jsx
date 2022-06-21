@@ -51,7 +51,7 @@ export default function EmergencySection() {
     
       <div className='EmergencySection'>
         <fieldset>
-          <legend>Emergency</legend>
+          <legend> <span className='section-title'>Emergency </span></legend>
           <p>Availability of beds</p>
           <div className='EmergencySection1'>
 
@@ -93,8 +93,7 @@ export default function EmergencySection() {
         </fieldset>
       </div>
 
-      
-      
+
 
       </>
   )

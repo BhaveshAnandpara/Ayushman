@@ -21,6 +21,7 @@ import EmergencySection from '../src/Components/HospitalProfile/EmergencySection
 import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSection/FacilitiesSection'
 
 import Hospital from './Pages/Hospitals/Hospital';
+import Test from './Pages/test'
 
 function App() {
  
@@ -54,7 +55,7 @@ function App() {
 
 
 
-    </div>
+    </div >
     
   );
 }
