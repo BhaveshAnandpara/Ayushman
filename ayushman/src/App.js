@@ -33,8 +33,6 @@ function App() {
   return (
    
     <div className="App">
-       <EmergencySection></EmergencySection>
-       <FacilitiesSection></FacilitiesSection>
      
       <BrowserRouter>
         <Routes>
