@@ -18,7 +18,7 @@ export default function Hospital(value) {
           <HospitalNavbar value={value.value}/>
         </div>
 
-        <div className='hosp-dashboard border'>
+        <div className='hosp-dashboard '>
           <HospDashboard/>
         </div>
         

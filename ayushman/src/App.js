@@ -17,35 +17,46 @@ import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import HospitalProfile from './Components/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
-import AdvanceSearch from './Components/AdvanceSearch/AdvanceSearch';
 import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
+import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSection/FacilitiesSection'
 
-import Hospital from './Pages/Hospitals/Hospital'
+import Hospital from './Pages/Hospitals/Hospital';
+import Test from './Pages/test'
 
 function App() {
-
+ 
 
 
 
 
 
   return (
+   
     <div className="App">
+       <EmergencySection></EmergencySection>
+       <FacilitiesSection></FacilitiesSection>
+     
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
-          <Route exact path="/update" element={<Hospital value={"update"} />}></Route>
-          <Route exact path="/facilities" element={<Hospital value={"facilities"} />}></Route>
-          <Route exact path="/inventory" element={<Hospital value={"inventory"} />}></Route>
-          <Route exact path="/rates" element={<Hospital value={"rates"} />}></Route>
-          <Route exact path="/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
+
+
+          <Route exact path="/test" element={<Test/>}></Route>
+          <Route exact path="/findHospital" element={<Home/>}></Route>
+          <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
+          <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
+          <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
+          <Route exact path="/hospitalDashboard/update" element={<Hospital value={"update"} />}></Route>
+          <Route exact path="/hospitalDashboard/facilities" element={<Hospital value={"facilities"} />}></Route>
+          <Route exact path="/hospitalDashboard/inventory" element={<Hospital value={"inventory"} />}></Route>
+          <Route exact path="/hospitalDashboard/rates" element={<Hospital value={"rates"} />}></Route>
+          <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
         </Routes>
       </BrowserRouter>
 
 
 
-    </div>
+    </div >
+    
   );
 }
 

@@ -7,8 +7,9 @@ const jwt = require('jsonwebtoken')
 router.post('/basicInfo', (req, res) => {
 
     const hospImage = req.body.image
+    const hospID = req.body.hosp_id
     const name = req.body.name
-    const address = req.body.address
+    const addressLine = req.body.addressLine
     const phoneNos = req.body.phoneNos
     const state = req.body.state
     const district = req.body.district
@@ -17,11 +18,13 @@ router.post('/basicInfo', (req, res) => {
     const typeOfHosp = req.body.typeOfHosp
     const otherBranch = req.body.branch
 
-
+    
+    try {
     const newHosp = new Hospital({
+        hosp_id: hospID,
         hosp_name: name,
         hosp_address: {
-            address_line1: address,
+            address_line1: addressLine,
             district: district,
             state: state,
             pincode: pincode,
@@ -38,8 +41,7 @@ router.post('/basicInfo', (req, res) => {
             unit: " "
         }
     })
-    const hosp =  newHosp.save()
-    try {
+        const hosp =  newHosp.save()
         res.status(201).json("Hospital Created")
     } catch (err) {
         res.status(404).json(err)
