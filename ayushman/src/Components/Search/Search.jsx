@@ -51,9 +51,9 @@ export default function Search(props) {
     selectedDistrict = value
   }
 
-  
+
   function setPincode() {
-    console.log( document.querySelector(".pincode-input").value)
+    console.log(document.querySelector(".pincode-input").value)
   }
 
   stateDropdown()
@@ -122,7 +122,7 @@ export default function Search(props) {
   }
 
   const dashboardStyle = {
-      width:"100%"
+    width: "100%"
   }
 
 
@@ -157,122 +157,122 @@ export default function Search(props) {
   }
 
   const hospSearch = {
-    position : "absolute ! important"
+    position: "absolute ! important"
   }
 
   return (<>
-  {
-    (!props.stateAndDistrictOnly &&  !props.searchHospitalOnly) &&
-    <div className='search-container '>
+    {
+      (!props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
+      <div className='search-container '>
 
-      {/* Normal Search */}
-
-              
-      {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
-        <p className="container-title">Search Hospitals</p>
-      }
+        {/* Normal Search */}
 
 
-            
-      {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
-        <div className="all-search-parameters ">
-          <div className="search-parameters ">
-
-            <div className="stateAndDistrict ">
+        {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
+          <p className="container-title">Search Hospitals</p>
+        }
 
 
 
-              <div className=''>
-                <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+        {(!props.advanceSearch && !props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
+          <div className="all-search-parameters ">
+            <div className="search-parameters ">
+
+              <div className="stateAndDistrict ">
+
+
+
+                <div className=''>
+                  <div className='search-input-conatainer'>
+                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                  </div>
                 </div>
+
+                <div className=''>
+                  <div className='search-input-conatainer'>
+                    <Select styles={customStyles} options={District} className="search-input" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
+                  </div>
+                </div>
+
+
               </div>
 
-              <div className=''>
-                <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
-                </div>
+              <div className="">
+                <Select styles={customStyles} options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => console.log(opt.value)} id='state-input' placeholder="Search Hospital" />
               </div>
-
 
             </div>
 
-            <div className="">
-              <Select styles={customStyles} options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => console.log(opt.value)} id='state-input' placeholder="Search Hospital" />
+            <button className="btn " type="button">Search</button>
+          </div>
+
+        }
+
+        {
+          props.advanceSearch &&
+          <div className="all-search-parameters advSearch">
+            <div className="search-parameters ">
+
+              <div className="stateAndDistrict advSearch-stateAndDistrict">
+
+
+                <div className=''>
+                  <div className='search-input-conatainer'>
+                    <Select styles={customStyles} options={State} className="search-input"
+                      onChange={
+                        opt => {
+                          selectOption(opt.value)
+                          setState(opt.value)
+                        }
+                      }
+                      id='state-input' placeholder="State" value="State" />
+                  </div>
+                </div>
+
+                <div className=''>
+                  <div className='search-input-conatainer'>
+                    <Select styles={customStyles} options={District} className="search-input"
+                      onChange={
+                        opt => {
+                          selectOption(opt.value)
+                          setDistrict(opt.value)
+                        }
+                      }
+                      id='state-input' value="District" placeholder="District" />
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="tag-container">
+
+              </div>
+
+
+              <p className="container-title" >Type of Hospitals</p>
+
+              <div className="typeOfHosp-container">
+                {
+                  typeOfHospitals.map((ele) => {
+                    return (
+                      <span> <input type="checkbox" name="" id="search-checkbox" /> {ele.value} </span>
+                    );
+                  })
+                }
+              </div>
+
+              <button className="btn-sm " type="button"> Save </button>
             </div>
 
           </div>
 
-          <button className="btn " type="button">Search</button>
-        </div>
+        }
+      </div>
+    }
 
-      }
+    {props.stateAndDistrictOnly &&
 
-      {
-        props.advanceSearch &&
-        <div className="all-search-parameters advSearch">
-          <div className="search-parameters ">
-
-            <div className="stateAndDistrict advSearch-stateAndDistrict">
-
-
-              <div className=''>
-                <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input"
-                    onChange={
-                      opt => {
-                        selectOption(opt.value)
-                        setState(opt.value)
-                      }
-                    }
-                    id='state-input' placeholder="State" value="State" />
-                </div>
-              </div>
-
-              <div className=''>
-                <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input"
-                    onChange={
-                      opt => {
-                        selectOption(opt.value)
-                        setDistrict(opt.value)
-                      }
-                    }
-                    id='state-input' value="District" placeholder="District" />
-                </div>
-              </div>
-
-            </div>
-
-            <div className="tag-container">
-
-            </div>
-
-
-            <p className="container-title" >Type of Hospitals</p>
-
-            <div className="typeOfHosp-container">
-              {
-                typeOfHospitals.map((ele) => {
-                  return (
-                    <span> <input type="checkbox" name="" id="search-checkbox" /> {ele.value} </span>
-                  );
-                })
-              }
-            </div>
-
-          <button className="btn-sm " type="button"> Save </button>
-          </div>
-
-        </div>
-
-      }
-    </div>
-  }
-
-{props.stateAndDistrictOnly &&
-
-    <div className="search-container-dashboard" style={dashboardStyle}>
+      <div className="search-container-dashboard" style={dashboardStyle}>
 
         <div className="all-search-parameters ">
           <div className="search-parameters-dashboard " style={dashboardStyle} >
@@ -281,20 +281,21 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
+                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <input type="text" className='pincode-input' onBlur={ ()=>{
-                    setPincode()} }   placeholder='Pin code'></input>
+                  <input type="text" className='pincode-input' onBlur={() => {
+                    setPincode()
+                  }} placeholder='Pin code'></input>
                 </div>
               </div>
 
@@ -302,31 +303,31 @@ export default function Search(props) {
 
           </div>
         </div>
-    </div>
+      </div>
 
 
-      }
+    }
 
-{props.searchHospitalOnly &&
+    {props.searchHospitalOnly &&
 
-    <div className="search-container-dashboard" style={dashboardStyle}>
+      <div className="search-container-dashboard" style={dashboardStyle}>
 
         <div className="all-search-parameters ">
           <div className="search-parameters-dashboard " style={dashboardStyle} >
 
             <div className="stateAndDistrict-dashboard" style={dashboardStyle}>
 
-              <Select styles={customStyles}  options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
+              <Select styles={customStyles} options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
             </div>
 
           </div>
         </div>
-    </div>
+      </div>
 
 
-      }
+    }
 
-</>
+  </>
 
   )
 }

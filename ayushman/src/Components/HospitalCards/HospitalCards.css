@@ -19,14 +19,15 @@
 }
 
 .branch-card{
-    max-width: 500px;
-    min-width: 500px;
+    max-width: 450px;
+    min-width: 450px;
     align-items: flex-start;
     padding: 20px 20px;
     position: relative;
     display: inline-flex;
     left: 0%;
     transform: translateX(0%);
+    margin: 0px 10px 10px 0px ;
 }
 
 
@@ -147,4 +148,5 @@
 
 .branch-tags{
     font-size: 12px;
+    padding: 8px 10px;
 }

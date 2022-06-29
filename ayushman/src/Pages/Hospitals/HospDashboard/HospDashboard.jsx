@@ -66,7 +66,7 @@ export default function HospDashboard() {
       {
         otherBranches.map((ele) => {
           return(
-          <HospitalCards name={ele} isOtherBranch={true} />
+          <HospitalCards  name={ele} isOtherBranch={true} />
           )
         })
       }

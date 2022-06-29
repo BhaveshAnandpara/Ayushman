@@ -33,13 +33,13 @@ function App() {
   return (
    
     <div className="App">
-       <EmergencySection></EmergencySection>
-       <FacilitiesSection></FacilitiesSection>
+       {/* <EmergencySection></EmergencySection>
+       <FacilitiesSection></FacilitiesSection> */}
      
       <BrowserRouter>
         <Routes>
 
-
+          <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/test" element={<Test/>}></Route>
           <Route exact path="/findHospital" element={<Home/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
