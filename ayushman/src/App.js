@@ -24,7 +24,7 @@ import Hospital from './Pages/Hospitals/Hospital'
 
 function App() {
 
-  const [advSearch, setAdvSearch] = useState(true)
+
 
 
 
@@ -33,27 +33,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <section className=" search-bar-section">
-
-        <div className='search-box '>
-          <Search advanceSearch={false} />
-        </div>
-
-        <div className="advSearchToggle ">
-
-          <p onClick={()=>{
-            setAdvSearch(!advSearch)
-            }} className=" advSearchBtn" >Advance Search</p>
-
-          <div className={`search-box ${ advSearch ? " displayToggle" : "" }`} >
-            <Search advanceSearch={true} />
-          </div>
-
-        </div>
-
-
-      </section> */}
-
+          <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/update" element={<Hospital value={"update"} />}></Route>
           <Route exact path="/facilities" element={<Hospital value={"facilities"} />}></Route>
