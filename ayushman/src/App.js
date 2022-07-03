@@ -22,14 +22,10 @@ import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSecti
 
 import Hospital from './Pages/Hospitals/Hospital';
 import Test from './Pages/test'
+import FindHospital from './Pages/FindHospital/FindHospital';
 
 function App() {
  
-
-
-
-
-
   return (
    
     <div className="App">
@@ -39,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/" element={<FindHospital/>}></Route>
           <Route exact path="/test" element={<Test/>}></Route>
           <Route exact path="/findHospital" element={<Home/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>

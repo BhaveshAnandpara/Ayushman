@@ -7,6 +7,7 @@ import myJSON from '../../JsonFiles/stateAndDistrict.json'
 
 export default function Search(props) {
 
+
   let tagCount = 1
 
   let selectedState = ""
@@ -133,6 +134,7 @@ export default function Search(props) {
       border: 'none',
       outline: 'none'
     }),
+
     dropdownIndicator: (provided, state) => ({
       ...provided,
       color: '#0D4F8C',
@@ -153,6 +155,10 @@ export default function Search(props) {
       "&:hover": {
         border: 'none',
       }
+    }),
+    menulist:(provided ,  state)=>({
+      ...provided,
+      color:"red"
     })
   }
 
@@ -184,7 +190,7 @@ export default function Search(props) {
 
                 <div className=''>
                   <div className='search-input-conatainer'>
-                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)}  id='state-input' placeholder="State" />
                   </div>
                 </div>
 
@@ -225,6 +231,8 @@ export default function Search(props) {
                           setState(opt.value)
                         }
                       }
+
+
                       id='state-input' placeholder="State" value="State" />
                   </div>
                 </div>
