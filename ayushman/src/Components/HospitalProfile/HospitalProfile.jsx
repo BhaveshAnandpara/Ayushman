@@ -1,7 +1,11 @@
 import React from 'react'
-import HospitalInfo from './HospitalInfo/HospitalInfo'
+import EmergencySection from './EmergencySection/EmergencySection'
+import FacilitySection from './FacilitiesSection/FacilitiesSection'
 export default function HospitalProfile() {
   return (
-    <div> <HospitalInfo/> </div>
+    <div> 
+      <EmergencySection/>
+      <FacilitySection/>
+    </div>
   )
 }
