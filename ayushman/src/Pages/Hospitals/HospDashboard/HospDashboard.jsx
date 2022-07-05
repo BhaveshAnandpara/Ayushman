@@ -126,7 +126,7 @@ export default function HospDashboard() {
 
                   <div className='basicInfoPhoneNo '>
 
-                    <div className="phoneNo-container border">
+                    <div className="phoneNo-container ">
                       <input type="text" id='phoneNo' placeholder='Phone Number' />
                     </div>
 
