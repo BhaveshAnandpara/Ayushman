@@ -47,7 +47,7 @@ function App() {
           <Route exact path="/hospitalDashboard/inventory" element={<Hospital value={"inventory"} />}></Route>
           <Route exact path="/hospitalDashboard/rates" element={<Hospital value={"rates"} />}></Route>
           <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
-          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/login" element={<Login LoginItem={"Patient"} />}></Route>
         </Routes>
       </BrowserRouter>
 

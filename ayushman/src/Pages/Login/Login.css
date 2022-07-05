@@ -7,10 +7,11 @@
 
 .login-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     padding: 10px 0px 10px 0px;
+    height: 100%;
 }
 
 
@@ -51,7 +52,7 @@
 
 }
 
-.login-items>button {
+.login-items>* {
     width: 15vw;
     padding: 5px 25px;
     background-color: var(--light-blue-bg);
@@ -63,15 +64,19 @@
     color: var(--text-blue);
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.login-items>button:not(:last-child) {
+.login-items>*:not(:last-child) {
     margin-right: 15px;
 }
 
-.active-loginItem{
+.active-loginItem {
     background-color: var(--title);
-    color: var(--text-blue);
+    color: var(--light-blue-bg);
 }
 
 /* .login-items > span:not(:nth-child(1)){
@@ -131,4 +136,72 @@
     flex-direction: column;
     padding: 20px;
 
+}
+
+.phoneNoInput {
+    background-color: var(--light-blue-bg);
+    padding: 10px 45px 10px 15px;
+    border: none;
+    outline: none;
+    color: var(--text-blue);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.phoneNoInput::placeholder {
+    color: var(--text-blue);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 38px;
+}
+
+.getOTPbtn {
+    border: none;
+    outline: none;
+    background-color: var(--light-blue-bg);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 38px;
+    color: rgb(53, 172, 53);
+    padding: 0px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loginText {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--title);
+}
+
+.OTPinput{
+    height: 40px;
+    width: 420px;
+    padding: 30px;
+    letter-spacing: 68px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--title);
+
+}
+
+.login-content-container{
+    width: 60%;
+    height: 50%;
+}
+
+.patient-container > button{
+    margin-top: 30px;
 }
