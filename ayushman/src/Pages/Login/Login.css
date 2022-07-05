@@ -1,19 +1,25 @@
-
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 
 .login-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     padding: 10px 0px 10px 0px;
 }
 
-.login-main > div {
+
+.login-main>div {
     /* position: absolute; */
     /* background-color: #D5EBFF; */
 }
 
-.login-items > span{
+.login-items>span {
     /* display: flex; */
     flex-direction: row;
     justify-content: center;
@@ -25,44 +31,70 @@
     font-size: 17px;
     line-height: 38px;
     border: 2px solid var(--subtitle);
- width: 130px;
- height: auto;
-    padding :10px 30px  ;
+    width: 130px;
+    height: auto;
+    padding: 10px 30px;
     color: var(--subtitle);
     cursor: pointer;
-    
+
 }
 
-.login-items{
+.login-items {
     display: flex;
     justify-content: space-evenly;
-    width: 600px;
-    margin-left: 333px;
-    
-  
+    width: max-content;
+    /* margin-left: 333px; */
+
+
     align-items: center;
     flex-direction: row;
-    
+
 }
+
+.login-items>button {
+    width: 15vw;
+    padding: 5px 25px;
+    background-color: var(--light-blue-bg);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 38px;
+    color: var(--text-blue);
+    border: none;
+    cursor: pointer;
+}
+
+.login-items>button:not(:last-child) {
+    margin-right: 15px;
+}
+
+.active-loginItem{
+    background-color: var(--title);
+    color: var(--text-blue);
+}
+
 /* .login-items > span:not(:nth-child(1)){
     padding-left: 25px;
     padding-right: 25px;
 } */
 
-.patient-container{
+.patient-container {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    background: var(--ultra-light-blue-bg );
+    background: var(--ultra-light-blue-bg);
 }
-.patient-container-1{
+
+.patient-container-1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
-.patient-container-2{
+
+.patient-container-2 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -70,26 +102,29 @@
     flex-direction: row;
 }
 
-.hospital-login-container{
+.hospital-login-container {
     display: flex;
-    background: var(  --ultra-light-blue-bg  );
-   
+    background: var(--ultra-light-blue-bg);
+
     align-items: center;
     flex-direction: column;
 
 }
-.hospital-id{
+
+.hospital-id {
     padding: 10px;
 }
-.Hospital-password{
+
+.Hospital-password {
     padding: 10px;
 }
-.submit{
+
+.submit {
     padding: 20px;
 }
 
 
-.hospital-id-password{
+.hospital-id-password {
     display: flex;
     justify-content: space-between;
     align-items: center;
