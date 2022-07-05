@@ -11,7 +11,7 @@ const crypto = require('crypto') //For Hashing
 
 const smsKey = process.env.SMS_SECRET_KEY
 
-
+//Hospital Login
 
 router.post('/hospLogin', async (req, res) => {
 
@@ -41,5 +41,8 @@ router.post('/hospLogin', async (req, res) => {
 
 
 })
+
+//Get Hospital
+
 
 module.exports = router

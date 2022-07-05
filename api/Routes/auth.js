@@ -14,11 +14,12 @@ const client = require('twilio')(accountSid, authToken);
 const JWT_AUTH_TOKEN = process.env.JWT_AUTH_TOKEN
 const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_TOKEN
 const crypto = require('crypto') //For Hashing
+const { json } = require("express")
 
 const smsKey = process.env.SMS_SECRET_KEY
 
 
-router.post('/register' , async (req , res)=>{
+router.post('/register', async (req, res) => {
 
     //declaring credentials
     const fullName = req.body.name
@@ -27,22 +28,22 @@ router.post('/register' , async (req , res)=>{
     const password = req.body.password
     const confirmPassword = req.body.confirmPassword
 
-    if( password === confirmPassword ){
-        try{
-        const newUser = new User({
-            name: fullName,
-            phone_no: phoneNo,
-            email_id : email,
-            user_password: CryptoJS.AES.encrypt(password, process.env.SECRET_KEY).toString()//Encryptes Password
-        })
+    if (password === confirmPassword) {
+        try {
+            const newUser = new User({
+                name: fullName,
+                phone_no: phoneNo,
+                email_id: email,
+                user_password: CryptoJS.AES.encrypt(password, process.env.SECRET_KEY).toString()//Encryptes Password
+            })
 
-        const user = await newUser.save()
-        res.status(201).json("user Created")
-        
-        }catch(err){
+            const user = await newUser.save()
+            res.status(201).json("user Created")
+
+        } catch (err) {
             res.status(401).json("User Already Registered")
         }
-    }else{
+    } else {
         res.status(401).json("Passwords Don't Match")
     }
 
@@ -53,21 +54,25 @@ router.post('/login', async (req, res) => {
     //Decrlaring credentials
     const phoneNo = req.body.phoneNo
     const password = req.body.password
-    
-    
-    try{
-            const user = await User.findOne({ phone_no: phoneNo }) //Find User in Database by PhoneNo
 
-      
-            var bytes = CryptoJS.AES.decrypt(user.user_password, process.env.SECRET_KEY); //Decrypt the Encrypted Password
-            var originalPass = bytes.toString(CryptoJS.enc.Utf8); //Original Password
-        
-            originalPass !== password && 
+
+try{
+    
+    const user = await User.findOne({ phone_no: phoneNo })//Find User in Database by PhoneNo 
+
+
+    try {
+
+        var bytes = CryptoJS.AES.decrypt(user.user_password, process.env.SECRET_KEY); //Decrypt the Encrypted Password
+        var originalPass = bytes.toString(CryptoJS.enc.Utf8); //Original Password
+
+        originalPass !== password &&
             res.status(401).json("Invalid Password")
-    }catch(err){
+
+
+    } catch (err) {
         res.json("Invalid Mobile Number")
     }
-    
 
     const OTP = Math.floor(Math.random() * 1000000)  //6 Digit OTP
     const timeLimit = 2 * 60 * 1000 // 2mins in milliseconds
@@ -88,8 +93,11 @@ router.post('/login', async (req, res) => {
     //     console.log(err)
     // })
 
-    res.status(200).send({ phoneNo, hash: fullHash, password, OTP })
+    res.status(200).json({ phoneNo, hash: fullHash, password, OTP })
 
+}catch(err){
+    res.json(err)
+}
 
 })
 
@@ -116,21 +124,21 @@ router.post('/verifyOTP', async (req, res) => {
         const refreshToken = jwt.sign({ data: phoneNo }, `${JWT_REFRESH_TOKEN}`, { expiresIn: '1y' })
         refreshTokens.push(refreshToken)
 
-            res.status(202)
-                .cookie('accessToken', accessToken, { expires: new Date(new Date().getTime() + 30 * 1000), sameSite: 'strict', httpOnly: true })
-                .cookie('authSession', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
-                .cookie('refreshToken', refreshToken, { expires: new Date(new Date().getTime() + 35576), sameSite: 'strict', httpOnly: true })
-                .cookie('refreshTokenID', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
-                .send({ msg: "device Confirmed" })
+        res.status(202)
+            .cookie('accessToken', accessToken, { expires: new Date(new Date().getTime() + 30 * 1000), sameSite: 'strict', httpOnly: true })
+            .cookie('authSession', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
+            .cookie('refreshToken', refreshToken, { expires: new Date(new Date().getTime() + 35576), sameSite: 'strict', httpOnly: true })
+            .cookie('refreshTokenID', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
+            .send({ msg: "device Confirmed" })
     }
-    else{
+    else {
         res.json("Invalid OTP")
     }
 
 
 })
 
-router.post('/resetPassword' , async(req,res)=>{
+router.post('/resetPassword', async (req, res) => {
 
     const phoneNo = req.body.phoneNo
 
@@ -143,7 +151,7 @@ router.post('/resetPassword' , async(req,res)=>{
 
     const fullHash = `${hash}.${expires}` //hash with Expiry
 
-        // client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
+    // client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
     //     body : `Your OTP for Reset Password is ${OTP}`,
     //     from : +19106684570,
     //     to : `+91${phoneNo}`
