@@ -22,7 +22,7 @@ export default function EmergencySection() {
 
       <div className='hospital-info-container'>
         <div className='hospital-img'>
-          <img className='hospital-img' src={hosplmage.png} alt="hosplmage" />
+          <img className='hospitals-img' src={hosplmage.png} alt="hosplmage" />
         </div>
 
         <div className='hospital-info'>

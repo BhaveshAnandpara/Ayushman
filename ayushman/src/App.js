@@ -32,7 +32,7 @@ function App() {
     <div className="App">
 
      
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
 
           <Route exact path="/" element={<FindHospital/>}></Route>
@@ -48,8 +48,9 @@ function App() {
           <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
       
+      <EmergencySection/>
 
 
 
