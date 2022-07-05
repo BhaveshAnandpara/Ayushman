@@ -10,7 +10,7 @@ return (
       <>
         <div className='facilities'>
         <fieldset>
-          <legend>facilities</legend>
+          <legend><span className='section-title'>facilities</span></legend>
           <div className='facilities1'>
           <div className='ambulance'><div class="grid-item"><img className='bed-icon1' src={bedIcon} alt="bed-icon" /><span className='names1'>Ambulance</span>
               </div>

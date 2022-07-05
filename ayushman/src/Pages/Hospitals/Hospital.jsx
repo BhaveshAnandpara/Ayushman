@@ -8,10 +8,11 @@ import HospDashboard from './HospDashboard/HospDashboard'
 
 export default function Hospital(value) {
   return (
-    < section>
-      <Header />
+    <>
+    <Header />
       <Navbar />
 
+    < section>
       <div className='hospContainer'>
 
         <div className='hosp-navbar' >
@@ -24,5 +25,6 @@ export default function Hospital(value) {
         
       </div>
     </section>
+    </>
   )
 }

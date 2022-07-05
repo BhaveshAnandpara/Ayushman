@@ -22,26 +22,22 @@ import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSecti
 import CostEstimatorSection from '../src/Components/HospitalProfile/CostEstimatorSection/CostEstimatorSection'
 
 import Hospital from './Pages/Hospitals/Hospital';
+import Test from './Pages/test'
+import FindHospital from './Pages/FindHospital/FindHospital';
 
 function App() {
  
-
-
-
-
-
   return (
    
     <div className="App">
-       <EmergencySection></EmergencySection>
-       <FacilitiesSection></FacilitiesSection>
-       <CostEstimatorSection></CostEstimatorSection>
+       {/* <EmergencySection></EmergencySection>
+       <FacilitiesSection></FacilitiesSection> */}
      
       <BrowserRouter>
         <Routes>
 
-
-          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/" element={<FindHospital/>}></Route>
+          <Route exact path="/test" element={<Test/>}></Route>
           <Route exact path="/findHospital" element={<Home/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
           <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
@@ -56,7 +52,7 @@ function App() {
 
 
 
-    </div>
+    </div >
     
   );
 }

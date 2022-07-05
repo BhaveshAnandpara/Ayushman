@@ -13,12 +13,11 @@
     text-align: center;
     font-family: var(--primary-font);
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 39px;
     padding: 10px 0px;
     cursor: pointer;
     text-decoration: none;
-
 }
 
 .active-nav{

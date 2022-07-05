@@ -68,6 +68,10 @@
     border-radius: 3px;
 }
 
+.dashboard-select-region{
+    width: 18em;
+}
+
 
 
 .search-input::placeholder {

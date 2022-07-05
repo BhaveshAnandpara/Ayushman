@@ -3,6 +3,13 @@
     padding: 0 27px 0  ;
     border: 0ch;
 }
+
+.section-title{
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--ligh-blue);
+}
+
 .hospital-info-container{
     display: flex;
     flex-direction: row;
