@@ -4,6 +4,16 @@
     border: 0ch;
 }
 
+.main-EmergencySection{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border:2px solid blue;
+}
+/* .EmergencySection{
+    width: 80%;
+} */
+
 .section-title{
     border-radius: 5px;
     padding: 5px 10px;
@@ -51,12 +61,14 @@
     grid-template-columns: auto auto auto auto auto auto;
     gap: 10px;
     padding: 20px;
+  
 
 }
 .EmergencySection2{
     display: grid;
     grid-template-columns: auto auto auto auto auto ;
     gap: 60px;
+   
 }
 .names{
     width: 159px;

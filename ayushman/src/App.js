@@ -30,8 +30,7 @@ function App() {
   return (
    
     <div className="App">
-       {/* <EmergencySection></EmergencySection>
-       <FacilitiesSection></FacilitiesSection> */}
+
      
       <BrowserRouter>
         <Routes>
@@ -49,10 +48,12 @@ function App() {
           <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
         </Routes>
       </BrowserRouter>
+      
 
 
 
     </div >
+    
     
   );
 }
