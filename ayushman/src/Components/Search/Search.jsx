@@ -166,6 +166,21 @@ export default function Search(props) {
     position: "absolute ! important"
   }
 
+  function searchValues(){
+
+    if( selectedState === ""){
+      alert("Please Select State")
+    }
+    else if( selectedDistrict === ""){
+      alert("Please Select District")
+    }
+    else{
+      const searchData = [selectedState , selectedDistrict]
+      return searchData
+    }
+}
+
+
   return (<>
     {
       (!props.stateAndDistrictOnly && !props.searchHospitalOnly) &&
@@ -209,7 +224,7 @@ export default function Search(props) {
 
             </div>
 
-            <button className="btn " type="button">Search</button>
+            <button className="btn " type="button" onClick={ ()=>props.getData(searchValues()) } >Search</button>
           </div>
 
         }
@@ -269,7 +284,7 @@ export default function Search(props) {
                 }
               </div>
 
-              <button className="btn-sm " type="button"> Save </button>
+              <button className="btn-sm " type="button" > Save </button>
             </div>
 
           </div>
