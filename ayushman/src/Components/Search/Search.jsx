@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Select from 'react-select';
+import axios from 'axios'
+
 
 import '../Search/Search.css'
 import myJSON from '../../JsonFiles/stateAndDistrict.json'
@@ -16,6 +18,7 @@ export default function Search(props) {
 
   const State = []
   const District = []
+  const Hospital = []
 
   function stateDropdown() {
     myJSON.states.forEach(element => {
@@ -50,6 +53,7 @@ export default function Search(props) {
 
   function setDistrict(value) {
     selectedDistrict = value
+    getHospital()
   }
 
 
@@ -58,15 +62,6 @@ export default function Search(props) {
   }
 
   stateDropdown()
-
-
-
-  const Hospitals = [
-    { label: 'ABC Hospital', value: 'ABC Hospital' },
-    { label: 'DEF Hospital', value: 'DEF Hospital' },
-    { label: 'GHI Hopsital', value: 'GHI Hopsital' },
-    { label: 'XYZ Hospital', value: 'XYZ Hospital' },
-  ]
 
   const typeOfHospitals = [
     { label: 'Private Hospital', value: 'Private Hospital' },
@@ -156,9 +151,9 @@ export default function Search(props) {
         border: 'none',
       }
     }),
-    menulist:(provided ,  state)=>({
+    menulist: (provided, state) => ({
       ...provided,
-      color:"red"
+      color: "red"
     })
   }
 
@@ -166,19 +161,44 @@ export default function Search(props) {
     position: "absolute ! important"
   }
 
-  function searchValues(){
+  function searchValues() {
 
-    if( selectedState === ""){
+    if (selectedState === "") {
       alert("Please Select State")
     }
-    else if( selectedDistrict === ""){
+    else if (selectedDistrict === "") {
       alert("Please Select District")
     }
-    else{
-      const searchData = [selectedState , selectedDistrict]
+    else {
+      const searchData = [selectedState, selectedDistrict]
       return searchData
     }
-}
+  }
+
+  function getHospital() {
+
+    axios.get('http://localhost:8001/hospitalData/getHospList', {
+      params: {
+        state: selectedState,
+        district: selectedDistrict
+      }
+    })
+      .then(function (response) {
+        const hospData = response.data[0]
+        const hosp = response.data[0].hosp_name
+
+        const obj = { label: hosp, value: hosp }
+        Hospital.push(obj)
+        console.log(Hospital);
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+
+
+  }
 
 
   return (<>
@@ -205,7 +225,7 @@ export default function Search(props) {
 
                 <div className=''>
                   <div className='search-input-conatainer'>
-                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)}  id='state-input' placeholder="State" />
+                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
                   </div>
                 </div>
 
@@ -219,12 +239,12 @@ export default function Search(props) {
               </div>
 
               <div className="">
-                <Select styles={customStyles} options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => console.log(opt.value)} id='state-input' placeholder="Search Hospital" />
+                <Select styles={customStyles} options={Hospital} className="search-input SearchByHospitalName" onChange={opt => console.log(opt.value)} id='state-input' placeholder="Search Hospital" />
               </div>
 
             </div>
 
-            <button className="btn " type="button" onClick={ ()=>props.getData(searchValues()) } >Search</button>
+            <button className="btn " type="button" onClick={() => props.getData(searchValues())} >Search</button>
           </div>
 
         }
@@ -340,7 +360,7 @@ export default function Search(props) {
 
             <div className="stateAndDistrict-dashboard" style={dashboardStyle}>
 
-              <Select styles={customStyles} options={Hospitals} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
+              <Select styles={customStyles} options={Hospital} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
             </div>
 
           </div>
