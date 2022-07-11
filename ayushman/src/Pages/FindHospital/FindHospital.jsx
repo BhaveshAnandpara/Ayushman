@@ -13,11 +13,6 @@ export default function FindHospital() {
 
   const [advSearch, setAdvSearch] = useState(true)
   const [List, setList] = useState([])
-  const [isListPresent, setIsListPresent] = useState(false)
-
-  let arr = []
-
-  let cards = []
 
   const cardSection = useRef()
 
