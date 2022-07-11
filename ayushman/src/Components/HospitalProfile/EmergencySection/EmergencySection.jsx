@@ -4,6 +4,7 @@ import Navbar from '../../Navbar/Navbar'
 import bedIcon from '../../../Assets/Icons/bed-icon.png'
 import '../EmergencySection/EmergencySection.css'
 import hosplmage from '../../../Assets/Images/hospImage.png'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 export default function EmergencySection() {
@@ -23,16 +24,19 @@ export default function EmergencySection() {
     <>
       <Header />
       <Navbar />
-      {/* <div className='page-path '>
+      { <div className='page-path '>
 
         <div className="path-items">
           <span> Home </span>
+          <ArrowForwardIosIcon className="Arrow"/>
           <span> Find Hospital </span>
+          <ArrowForwardIosIcon className="Arrow"/>
           <span> ABC Hospital </span>
+          <ArrowForwardIosIcon className="Arrow1"/>
         </div>
-      </div> */}
+      </div> }
 
-      {/* <div className='hospital-info-container'>
+      <div className='hospital-info-container'>
         <div className='hospital-img'>
           <img className='hospitals-img' src={hosplmage.png} alt="hosplmage" />
         </div>
@@ -104,7 +108,7 @@ export default function EmergencySection() {
             </div>
           </fieldset>
         </div>
-      </section> */}
+      </section>
 
 
 
