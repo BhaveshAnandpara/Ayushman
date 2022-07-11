@@ -10,15 +10,41 @@ import myJSON from '../../JsonFiles/stateAndDistrict.json'
 export default function Search(props) {
 
 
+  const [chosedState, setChosedState] = useState("")
+  const [chosedDistrict, setChosedDistrict] = useState("")
+
   let tagCount = 1
 
-  let selectedState = ""
-  let selectedDistrict = ""
+  let selectedStates = []
+  let selectedDistricts = []
   let pincode = ""
+
+  // Normal Search
 
   const State = []
   const District = []
   const Hospital = []
+  const hospList = []
+
+  // Advance Search
+
+  const selectedOptions = []
+
+
+  const typeOfHospitals = [
+    { label: 'Private Hospital', value: 'Private Hospital' },
+    { label: 'Government Hospital', value: 'Government Hospital' },
+    { label: 'Semi-Goverment Hospital', value: 'Semi-Goverment Hospital' },
+    { label: 'Charitable Hospital', value: 'Charitable Hospital' },
+  ]
+
+  stateDropdown()
+  function values(){
+    console.log(chosedState)
+    console.log(chosedDistrict)
+  }
+
+  //------------------------------------------- Dropdown for state-------------------------------------------------
 
   function stateDropdown() {
     myJSON.states.forEach(element => {
@@ -28,14 +54,12 @@ export default function Search(props) {
     });
   }
 
-
+  //------------------------------------------- Dropdown for District-------------------------------------------------
 
   function districtDropdown() {
-
-
     myJSON.states.forEach(element => {
 
-      if (element.state === selectedState) {
+      if (element.state === chosedState) {
         District.length = 0 // Empty District Array Before Push so that if Other State is Selected Distrcits will be Overidden
         element.districts.forEach(district => {
           const obj = { label: district, value: district }
@@ -46,31 +70,47 @@ export default function Search(props) {
     });
   }
 
-  function setState(value) {
-    selectedState = value
+  //------------------------------------------- Setting State and District Values and Pincode -------------------------------------------------
+
+
+  useEffect(() => {
     districtDropdown()
+  }, [chosedState])
+
+  useEffect(()=>{
+    getHospitalList()
+  },[chosedDistrict])
+
+
+  function setState() {
+    console.log("first")
   }
 
   function setDistrict(value) {
-    selectedDistrict = value
-    getHospital()
+    selectedDistricts = value
   }
-
 
   function setPincode() {
     console.log(document.querySelector(".pincode-input").value)
   }
 
-  stateDropdown()
+  //Checks Whether Inputs value are filled or not
 
-  const typeOfHospitals = [
-    { label: 'Private Hospital', value: 'Private Hospital' },
-    { label: 'Government Hospital', value: 'Government Hospital' },
-    { label: 'Semi-Goverment Hospital', value: 'Semi-Goverment Hospital' },
-    { label: 'Charitable Hospital', value: 'Charitable Hospital' },
-  ]
+  function checkSearchInput() {
 
-  const selectedOptions = []
+    if (selectedStates === "") {
+      alert("Please Select State")
+    }
+    else if (selectedDistricts === "") {
+      alert("Please Select District")
+    }
+    else {
+      return hospList
+    }
+  }
+
+  //------------------------------------------- Advance Search Logic  -------------------------------------------------
+
 
   const selectOption = (value) => {
 
@@ -86,8 +126,6 @@ export default function Search(props) {
     let tag = document.createElement("div")
     tag.setAttribute("class", "tag")
     tag.setAttribute("id", `${tagCount}`)
-
-
 
     let span = document.createElement("span")
     span.setAttribute("id", "tagText")
@@ -117,10 +155,12 @@ export default function Search(props) {
 
   }
 
+  //------------------------------------------- Styles-------------------------------------------------
+
+
   const dashboardStyle = {
     width: "100%"
   }
-
 
   const customStyles = {
     input: (provided, state) => ({
@@ -161,40 +201,33 @@ export default function Search(props) {
     position: "absolute ! important"
   }
 
-  function searchValues() {
 
-    if (selectedState === "") {
-      alert("Please Select State")
-    }
-    else if (selectedDistrict === "") {
-      alert("Please Select District")
-    }
-    else {
-      const searchData = [selectedState, selectedDistrict]
-      return searchData
-    }
-  }
+  //Returns List of Hospitals based on State and Districts
 
-  function getHospital() {
+  function getHospitalList() {
 
-    axios.get('http://localhost:8001/hospitalData/getHospList', {
-      params: {
-        state: selectedState,
-        district: selectedDistrict
-      }
-    })
-      .then(function (response) {
-        const hospData = response.data[0]
-        const hosp = response.data[0].hosp_name
-
-        const obj = { label: hosp, value: hosp }
-        Hospital.push(obj)
-        console.log(Hospital);
-
+    try {
+      axios.get('http://localhost:8001/hospitalData/getHospList', {
+        params: {
+          state: chosedState,
+          district: chosedDistrict
+        }
       })
-      .catch(function (error) {
-        console.log(error);
-      })
+        .then(function (response) {
+
+          for (var ele of response.data) {
+            hospList.push(ele)
+            const obj = { label: ele.hosp_name, value: ele.hosp_name }
+            Hospital.push(obj)
+          }
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    } catch (err) {
+      console.log(err)
+    }
 
 
 
@@ -225,13 +258,13 @@ export default function Search(props) {
 
                 <div className=''>
                   <div className='search-input-conatainer'>
-                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                    <Select styles={customStyles} options={State} className="search-input" onChange={opt => setChosedState(opt.value)} id='state-input' placeholder="State" />
                   </div>
                 </div>
 
                 <div className=''>
                   <div className='search-input-conatainer'>
-                    <Select styles={customStyles} options={District} className="search-input" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
+                    <Select styles={customStyles} options={District} className="search-input" onChange={opt => setChosedDistrict(opt.value)} id='state-input' placeholder="District" />
                   </div>
                 </div>
 
@@ -244,7 +277,7 @@ export default function Search(props) {
 
             </div>
 
-            <button className="btn " type="button" onClick={() => props.getData(searchValues())} >Search</button>
+            <button className="btn " type="button" onClick={() => props.getData(checkSearchInput())} >Search</button>
           </div>
 
         }

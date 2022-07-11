@@ -8,15 +8,24 @@ const jwt = require('jsonwebtoken')
 
 router.get('/getHospList', async (req, res) => {
 
-    const state = req.query.state
-    const district = req.query.district
-    const name = req.body.hosp_name
+    try {
+        const state = req.query.state
+        const district = req.query.district
+        const name = req.body.hosp_name
 
-    try{
-        const hospList = await Hospital.find({ 'hosp_address.state' : state , 'hosp_address.district' : district })
+        hospList = []
+        stateArr = state.split("_")
+        for( stateEle of stateArr){
+            const hosp = await Hospital.find({"hosp_address.state":stateEle})
+            for( ele of hosp){
+                hospList.push(ele)
+            }
+        }
         res.status(201).json(hospList)
-    }catch(err){
-        res.json(err)
+        
+    } catch (err) {
+        // res.status(201).json(err)
+        console.log(err)
     }
 
 })

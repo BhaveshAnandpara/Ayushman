@@ -187,13 +187,14 @@
     height: 40px;
     width: 420px;
     padding: 30px;
-    letter-spacing: 68px;
+    letter-spacing: 65px;
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 30px;
     color: var(--title);
+    overflow-x: hidden;
 
 }
 

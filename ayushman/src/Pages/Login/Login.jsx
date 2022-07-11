@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Header from '../../Components/Header/Header'
+import Navbar from '../../Components/Navbar/Navbar'
 import '../Login/Login.css'
 
 export default function Login(props) {
@@ -7,7 +9,9 @@ export default function Login(props) {
 
 
   return (
-
+    <>
+    <Header/>
+    <Navbar/>
     <section className='login-main '>
 
       <div className='login-items '>
@@ -64,5 +68,6 @@ export default function Login(props) {
 
       </div> */}
     </section>
+    </>
   )
 }
