@@ -5,7 +5,7 @@ export default function HospitalProfile() {
   return (
     <div> 
       <EmergencySection/>
-      <FacilitySection/>
+      {/* <FacilitySection/> */}
     </div>
   )
 }

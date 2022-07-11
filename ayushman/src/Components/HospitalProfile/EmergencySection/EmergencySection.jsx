@@ -7,20 +7,32 @@ import hosplmage from '../../../Assets/Images/hospImage.png'
 
 
 export default function EmergencySection() {
+          // pagetrack(pages)
+
+          // let pages=["Home","Find Hospitals","ABC Hospital"]
+
+          function pagetrack(pages){
+            
+            console.log("Nice");
+
+            }
+          
+            pagetrack()
+
   return (
     <>
       <Header />
       <Navbar />
-      <div className='page-path '>
+      {/* <div className='page-path '>
 
         <div className="path-items">
           <span> Home </span>
           <span> Find Hospital </span>
           <span> ABC Hospital </span>
         </div>
-      </div>
+      </div> */}
 
-      <div className='hospital-info-container'>
+      {/* <div className='hospital-info-container'>
         <div className='hospital-img'>
           <img className='hospitals-img' src={hosplmage.png} alt="hosplmage" />
         </div>
@@ -92,7 +104,7 @@ export default function EmergencySection() {
             </div>
           </fieldset>
         </div>
-      </section>
+      </section> */}
 
 
 
