@@ -37,7 +37,7 @@ function App() {
 
           <Route exact path="/" element={<FindHospital/>}></Route>
           <Route exact path="/test" element={<Test/>}></Route>
-          <Route exact path="/findHospital" element={<Home/>}></Route>
+          <Route exact path="/findHospital" element={<FindHospital/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
           <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/hospitalDashboard/inventory" element={<Hospital value={"inventory"} />}></Route>
           <Route exact path="/hospitalDashboard/rates" element={<Hospital value={"rates"} />}></Route>
           <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
-          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/login" element={<Login LoginItem={"Patient"} />}></Route>
         </Routes>
       </BrowserRouter>
       

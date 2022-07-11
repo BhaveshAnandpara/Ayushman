@@ -9,7 +9,7 @@ router.post('/basicInfo', (req, res) => {
     const hospImage = req.body.image
     const hospID = req.body.hosp_id
     const name = req.body.name
-    const addressLine = req.body.addressLine
+    const addressLine = req.body.address
     const phoneNos = req.body.phoneNos
     const state = req.body.state
     const district = req.body.district
@@ -17,7 +17,6 @@ router.post('/basicInfo', (req, res) => {
     const map_url = req.body.mapurl
     const typeOfHosp = req.body.typeOfHosp
     const otherBranch = req.body.branch
-
     
     try {
     const newHosp = new Hospital({
@@ -46,7 +45,6 @@ router.post('/basicInfo', (req, res) => {
     } catch (err) {
         res.status(404).json(err)
     }
-
 })
 
 module.exports = router

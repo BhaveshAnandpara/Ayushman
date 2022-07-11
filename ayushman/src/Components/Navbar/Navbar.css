@@ -6,7 +6,7 @@
     padding: 10px 75px;
 }
 
-.nav-items > span , .nav-login > span{
+.nav-items > * , .nav-login > *{
     font-weight: 600;
     font-size: 22px;
     line-height: 33px;
@@ -14,13 +14,14 @@
     padding: 0 27px 0 0 ;
     color: var(--subtitle);
     cursor: pointer;
+    text-decoration: none;
 }
 
-.nav-items > span:not(:nth-child(1)){
+.nav-items > *:not(:nth-child(1)){
     padding-left: 27px;
 }
 
-.nav-login > span{
+.nav-login > *{
     border: none ;
     padding-right: 0;
 }

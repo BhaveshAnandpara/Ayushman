@@ -6,6 +6,11 @@ import Navbar from '../Navbar/Navbar'
 
 export default function HospitalCards(props) {
 
+    function randomNum(){
+        return Math.floor(Math.random() * 50)
+    }
+
+
     const branchTags = [
         { label: 'Private Hospital', value: 'Private Hospital' },
         { label: 'Multi-Speciality', value: 'Multi-Speciality' }
@@ -21,35 +26,34 @@ export default function HospitalCards(props) {
         <div className="card-info ">
 
             <div className='card-hosp-text'>
-                <p className="card-hosp-name">{props.name}</p>
-                <p className="card-address">Dummy Road Address, Nagpur, Maharashtra.</p>
+                <p className="card-hosp-name">{props.hospdata.hosp_name}</p>
+                <p className="card-address">{props.hospdata.hosp_address.address_line1 + ", " + props.hospdata.hosp_address.district  + ", " + props.hospdata.hosp_address.state}</p>
             </div>
-
 
             <div className='card-info-box-container '>
 
                 <div className="card-info-box ">
                     <img className='bed-icon' src={bedIcon} alt="bed-icon" />
                     <span className='card-info-box-text'>Available Emergency Beds</span>
-                    <p className=' card-info-box-text red' >15</p>
+                    <p className=' card-info-box-text red' >{randomNum()}</p>
                 </div>
 
                 <div className="card-info-box ">
                     <img className='bed-icon' src={bedIcon} alt="bed-icon" />
                     <span className='card-info-box-text'>Available Beds with Oxygen</span>
-                    <p className=' card-info-box-text red' >5</p>
+                    <p className=' card-info-box-text red' >{randomNum()}</p>
                 </div>
 
                 <div className="card-info-box ">
                     <img className='bed-icon' src={bedIcon} alt="bed-icon" />
                     <span className='card-info-box-text'>Available Beds with Ventilator</span>
-                    <p className=' card-info-box-text red' >6</p>
+                    <p className=' card-info-box-text red' >{randomNum()}</p>
                 </div>
 
                 <div className="card-info-box ">
                     <img className='bed-icon' src={oxygenIcon} alt="oxygen-icon" />
                     <span className='card-info-box-text'>Oxygen Available</span>
-                    <p className=' card-info-box-text green' >20 Days</p>
+                    <p className=' card-info-box-text green' >{randomNum()} Days</p>
                 </div>
             </div>
 
