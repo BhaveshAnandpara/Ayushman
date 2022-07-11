@@ -26,6 +26,13 @@ export default function Search(props) {
   const Hospital = []
   const hospList = []
 
+  // For showing Other Branches
+  const dummyHospitalList = [
+    { label: 'ABC Hospital', value: 'ABC Hospital' },
+    { label: 'DEF Hospital', value: 'DEF Hospital' },
+    { label: 'GHI Hospital', value: 'GHI Hospital' },
+  ] 
+
   // Advance Search
 
   const selectedOptions = []
@@ -229,8 +236,6 @@ export default function Search(props) {
       console.log(err)
     }
 
-
-
   }
 
 
@@ -357,13 +362,13 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setState(opt.value)} id='state-input' placeholder="State" />
+                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setChosedState(opt.value)} id='state-input' placeholder="State" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setDistrict(opt.value)} id='state-input' placeholder="District" />
+                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setChosedDistrict(opt.value)} id='state-input' placeholder="District" />
                 </div>
               </div>
 
@@ -393,7 +398,7 @@ export default function Search(props) {
 
             <div className="stateAndDistrict-dashboard" style={dashboardStyle}>
 
-              <Select styles={customStyles} options={Hospital} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
+              <Select styles={customStyles} options={dummyHospitalList} className="search-input SearchByHospitalName" onChange={opt => props.getBranchData(opt.value)} id='state-input' placeholder="Search Hospital" />
             </div>
 
           </div>

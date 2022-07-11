@@ -121,3 +121,7 @@
     justify-content: space-between;
     width: fit-content;
 }
+
+.saveBtn{
+    margin-left: 20px;
+}

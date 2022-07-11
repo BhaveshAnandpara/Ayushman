@@ -14,6 +14,8 @@ import HospitalCards from '../../../Components/HospitalCards/HospitalCards';
 
 export default function HospDashboard() {
 
+  const [image, setImage] = useState("")
+
   let branch = ""
   let otherBranches = []
 
@@ -43,7 +45,8 @@ export default function HospDashboard() {
   const getBranchData = (childData) => {
     branch = childData
 
-    {!otherBranches.includes(branch) &&
+    {
+      !otherBranches.includes(branch) &&
       otherBranches.push(branch)
     }
     addBranch()
@@ -65,8 +68,8 @@ export default function HospDashboard() {
     root.render(<>
       {
         otherBranches.map((ele) => {
-          return(
-          <HospitalCards  name={ele} isOtherBranch={true} />
+          return (
+            <HospitalCards name={ele} isOtherBranch={true} />
           )
         })
       }
@@ -91,6 +94,8 @@ export default function HospDashboard() {
     paddingLeft: "23px",
     marginTop: "10px"
   }
+
+
 
 
   return (
@@ -166,7 +171,7 @@ export default function HospDashboard() {
             </div>
           </div>
 
-          <div className="typeOfHosdp">
+          <div className="typeOfHosp">
 
             <p className='container-title' style={titleStyle}>Other Branches</p>
 
@@ -183,6 +188,8 @@ export default function HospDashboard() {
             </div>
 
           </div>
+
+          <button className='btn saveBtn'  >Save</button>
 
 
         </form>
