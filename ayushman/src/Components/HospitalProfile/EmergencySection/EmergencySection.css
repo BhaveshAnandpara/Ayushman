@@ -1,106 +1,121 @@
-.path-items > span{
+.path-items>span {
     flex-direction: row;
-    padding: 0 27px 0  ;
+    padding: 0 27px 0;
     border: 0ch;
 }
-.hospital-img{
+
+.hospital-img {
     border: solid black;
-    width: 200px;
-    margin: 30px 20px;
-}
-.hospital-maps-img{
-    border: solid black;
-    width: 200px;
-    margin: 30px 20px;
+    width: 18%;
+    height: 180px;
+    background-size: cover;
+
+    /* margin: 30px 20px; */
 }
 
-.main-EmergencySection{
+.hos_con_img {
+    display: flex;
+}
+
+
+.hospital-info {
+    border: solid;
+}
+
+.main-EmergencySection {
     display: flex;
     justify-content: center;
     align-content: center;
-    border:2px solid blue;
+    border: 2px solid blue;
 }
+
 /* .EmergencySection{
     width: 80%;
 } */
 
-.section-title{
+.section-title {
     border-radius: 5px;
     padding: 5px 10px;
     background-color: var(--ligh-blue);
 }
 
-.hospital-info-container{
+.hospital-info-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     border: solid black;
-    padding-left: 240px;
+
 }
-.hospital-info-container > div{
+
+.hospital-info-container>div {
     text-align: center;
-    
+
     margin: 29px;
     padding: 14px;
     /* width: 500px; */
 }
-.types-hos{
+
+.types-hos {
     display: flex;
 }
-.types-hos>div{
+
+.types-hos>div {
     text-align: center;
     padding-right: 10px;
     padding-left: 100px;
 }
-.type1{
+
+.type1 {
     display: inline-block;
-        background-color:#D5EBFF ;
-        
-     
+    background-color: #D5EBFF;
+
+
 }
-.type2{
+
+.type2 {
     display: inline-block;
-    background-color:#D5EBFF ;
+    background-color: #D5EBFF;
 }
 
 
-.EmergencySection1{
+.EmergencySection1 {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     gap: 10px;
     padding: 20px;
-  
+
 
 }
-.EmergencySection2{
+
+.EmergencySection2 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto ;
+    grid-template-columns: auto auto auto auto auto;
     gap: 60px;
-   
+
 }
-.names{
+
+.names {
     width: 159px;
-height: 40px;
+    height: 40px;
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 112%;
-color: #3E80BC;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 112%;
+    color: #3E80BC;
 }
 
-.count{
+.count {
     width: 199px;
-height: 56px;
-
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 26px;
-line-height: 200%;
-color: #0D4F8C;
-flex: none;
-order: 2;
-flex-grow: 0;
+    height: 56px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 200%;
+    color: #0D4F8C;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
 }
