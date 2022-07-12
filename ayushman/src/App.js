@@ -49,10 +49,7 @@ function App() {
           <Route exact path="/login" element={<Login LoginItem={"Patient"} />}></Route>
         </Routes>
       </BrowserRouter>
-      
-
-
-      <EmergencySection></EmergencySection>
+     
     </div >
     
     
