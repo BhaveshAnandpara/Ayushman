@@ -12,13 +12,11 @@
     align-items: center;
     padding: 10px 0px 10px 0px;
     height: 100%;
+    border: 2px solid var(--subtitle);
+    background-color: var(--ultra-light) ;
+    
 }
 
-
-.login-main>div {
-    /* position: absolute; */
-    /* background-color: #D5EBFF; */
-}
 
 .login-items>span {
     /* display: flex; */
@@ -138,7 +136,7 @@
 
 }
 
-.phoneNoInput {
+.phoneNoInput , .passInput {
     background-color: var(--light-blue-bg);
     padding: 10px 45px 10px 15px;
     border: none;
