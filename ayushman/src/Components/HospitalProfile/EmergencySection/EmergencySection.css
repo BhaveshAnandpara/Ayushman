@@ -6,19 +6,22 @@
 
 .hospital-img {
     border: solid black;
-    width: 18%;
-    height: 180px;
+    width:18%;
+    height:180px;
     background-size: cover;
-
+    /* background-image: url('D:/Ayushman/ayushman/src/Assets/Images/hospImage.png'); */
+    
     /* margin: 30px 20px; */
 }
-
-.hos_con_img {
+.hos_con_img{
     display: flex;
 }
-
-
-.hospital-info {
+/* .hospital-maps-img{
+    border: solid black;
+    width: 200px;
+    margin: 30px 20px;
+} */
+.hospital-info{
     border: solid;
 }
 
@@ -45,7 +48,7 @@
     justify-content: space-between;
     text-align: center;
     border: solid black;
-
+ 
 }
 
 .hospital-info-container>div {

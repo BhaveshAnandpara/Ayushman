@@ -16,25 +16,26 @@ export default function EmergencySection() {
             console.log("Nice");
 
             }
-          
+             
             pagetrack()
 
   return (
     <>
       <Header />
       <Navbar />
-      {/* <div className='page-path '>
+      <div className='page-path '>
 
         <div className="path-items">
           <span> Home </span>
           <span> Find Hospital </span>
           <span> ABC Hospital </span>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className='hospital-info-container'>
+      <div className='hospital-info-container'>
+        <div className='.hos_con_img'>
         <div className='hospital-img'>
-          <img className='hospitals-img' src={hosplmage.png} alt="hosplmage" />
+          <img className='hospitals-img' />
         </div>
 
         <div className='hospital-info'>
@@ -52,15 +53,16 @@ export default function EmergencySection() {
             <p>+91-000000000000</p>
           </div>
         </div>
-        <div className='hospital-maps-img'>
-          <img className='maps' src={bedIcon} alt="bed-icon" />
+        </div>
+        <div className='hospital-img'>
+          <img className='hospitals-img'  />
         </div>
 
       </div >
 
 
 
-      <section className='main-EmergencySection'>
+       <section className='main-EmergencySection'>
         <div className='EmergencySection'>
           <fieldset>
             <legend> <span className='section-title'>Emergency </span></legend>
@@ -104,7 +106,7 @@ export default function EmergencySection() {
             </div>
           </fieldset>
         </div>
-      </section> */}
+      </section> 
 
 
 
