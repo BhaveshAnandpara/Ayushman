@@ -4,32 +4,47 @@
     border: 0ch;
 }
 
-.hospital-img {
-    border: solid black;
+.hospital-img{
+    width: 15vw;
+    height: 15vw;
+    background-size: cover;
+    background-image: url('../../../Assets/Images/hospImage.png');
+    margin-right: 20px;
+
+}
+
+.hospProfileContainer2 {
     width:18%;
     height:180px;
     background-size: cover;
-    /* background-image: url('D:/Ayushman/ayushman/src/Assets/Images/hospImage.png'); */
     
     /* margin: 30px 20px; */
 }
-.hos_con_img{
+.hospProfileContainer1{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 /* .hospital-maps-img{
     border: solid black;
     width: 200px;
     margin: 30px 20px;
 } */
-.hospital-info{
+.hospital-basicInfo{
     border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
+
 
 .main-EmergencySection {
     display: flex;
     justify-content: center;
     align-content: center;
-    border: 2px solid blue;
+    overflow: hidden;
 }
 
 /* .EmergencySection{
@@ -42,16 +57,15 @@
     background-color: var(--ligh-blue);
 }
 
-.hospital-info-container {
+.hospital-basicInfo-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
-    border: solid black;
  
 }
 
-.hospital-info-container>div {
+.hospital-basicInfo-container>div {
     text-align: center;
 
     margin: 29px;
@@ -84,8 +98,8 @@
 
 .EmergencySection1 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    gap: 10px;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    gap: 1px;
     padding: 20px;
 
 

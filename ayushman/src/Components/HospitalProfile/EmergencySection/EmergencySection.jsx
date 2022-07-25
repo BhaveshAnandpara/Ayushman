@@ -32,13 +32,11 @@ export default function EmergencySection() {
         </div>
       </div>
 
-      <div className='hospital-info-container'>
-        <div className='.hos_con_img'>
-        <div className='hospital-img'>
-          <img className='hospitals-img' />
-        </div>
+      <div className='hospital-basicInfo-container'>
+        <div className='hospProfileContainer1 '>
+        <div className='hospital-img '> </div>
 
-        <div className='hospital-info'>
+        <div className='hospital-basicInfo'>
           <p className='heading'>ABC Hospital</p>
           <p className='add'>Dummy road,wardha,maharasthra</p>
           <div className='types-hos'>
@@ -54,7 +52,7 @@ export default function EmergencySection() {
           </div>
         </div>
         </div>
-        <div className='hospital-img'>
+        <div className='hospProfileContainer2 '>
           <img className='hospitals-img'  />
         </div>
 
