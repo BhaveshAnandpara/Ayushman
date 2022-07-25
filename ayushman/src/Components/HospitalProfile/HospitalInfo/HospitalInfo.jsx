@@ -7,7 +7,7 @@ export default function HospitalInfo() {
   return (
   <div className ="profile">
     <div className="profile-navbar">
-            <span className="home">Home</span>
+            <span className="home">Home </span>
             <ArrowForwardIosIcon className="Arrow"/>
             <span className="findHospital">Find Hospital</span>
             <ArrowForwardIosIcon className="Arrow"/>

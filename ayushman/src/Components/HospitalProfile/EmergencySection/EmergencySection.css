@@ -126,13 +126,45 @@
 
 .count {
     width: 199px;
-    height: 56px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 200%;
-    color: #0D4F8C;
-    flex: none;
-    order: 2;
-    flex-grow: 0;
+height: 56px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 200%;
+color: #0D4F8C;
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.Arrow{
+    position: absolute;
+    color: #ADD7FF;
+}
+.Arrow1{
+    position: absolute;
+    color: #3E80BC;
+}
+.path-items > span:not(:nth-child(5)){
+    width: 125px;
+height: 27px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+    color: #ADD7FF;
+}
+.path-items > span:nth-child(5){
+    width: 115px;
+height: 27px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+    color: #3E80BC;
 }
