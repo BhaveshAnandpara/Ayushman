@@ -81,15 +81,15 @@ router.post('/login', async (req, res) => {
 
         const fullHash = `${hash}.${expires}` //hash with Expiry
 
-        // client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
-        //     body : `Your OTP for LOGIN is ${OTP}`,
-        //     from : +19106684570,
-        //     to : `+91${phoneNo}`
-        // }).then((msg) => {
-        //     console.log(msg)
-        // } ).catch( (err)=>{
-        //     console.log(err)
-        // })
+        client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
+            body : `Your OTP for LOGIN is ${OTP}`,
+            from : +19106684570,
+            to : `+91${phoneNo}`
+        }).then((msg) => {
+            console.log(msg)
+        } ).catch( (err)=>{
+            console.log(err)
+        })
 
         res.json({ phoneNo, hash: fullHash, password, OTP })
     } catch (err) {
@@ -123,12 +123,7 @@ router.post('/verifyOTP', async (req, res) => {
             const refreshToken = jwt.sign({ data: phoneNo }, `${JWT_REFRESH_TOKEN}`, { expiresIn: '1y' })
             refreshTokens.push(refreshToken)
 
-            res.status(202)
-                .cookie('accessToken', accessToken, { expires: new Date(new Date().getTime() + 30 * 1000), sameSite: 'strict', httpOnly: true })
-                .cookie('authSession', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
-                .cookie('refreshToken', refreshToken, { expires: new Date(new Date().getTime() + 35576), sameSite: 'strict', httpOnly: true })
-                .cookie('refreshTokenID', true, { expires: new Date(new Date().getTime() + 30 * 1000) })
-                .send({ msg: "device Confirmed" })
+            res.status(202).send({ msg: "device Confirmed" })
         }
         else {
             res.json("Invalid OTP")
