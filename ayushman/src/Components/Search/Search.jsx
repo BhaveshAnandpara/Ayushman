@@ -12,17 +12,20 @@ export default function Search(props) {
 
   const [chosedState, setChosedState] = useState("")
   const [chosedDistrict, setChosedDistrict] = useState("")
+  const [selectedDistricts, setSelectedDistricts] = useState([])
+  const [tagCount, setTagCount] = useState(1)
 
-  let tagCount = 1
+
+  var data = ""
 
   let selectedStates = []
-  let selectedDistricts = []
   let pincode = ""
 
   // Normal Search
 
   const State = []
   const District = []
+  const AdvSearchDistrict = []
   const Hospital = []
   const hospList = []
 
@@ -31,7 +34,7 @@ export default function Search(props) {
     { label: 'ABC Hospital', value: 'ABC Hospital' },
     { label: 'DEF Hospital', value: 'DEF Hospital' },
     { label: 'GHI Hospital', value: 'GHI Hospital' },
-  ] 
+  ]
 
   // Advance Search
 
@@ -46,7 +49,7 @@ export default function Search(props) {
   ]
 
   stateDropdown()
-  function values(){
+  function values() {
     console.log(chosedState)
     console.log(chosedDistrict)
   }
@@ -77,25 +80,19 @@ export default function Search(props) {
     });
   }
 
+
   //------------------------------------------- Setting State and District Values and Pincode -------------------------------------------------
 
 
   useEffect(() => {
     districtDropdown()
-  }, [chosedState])
+  }, [chosedState , selectedDistricts])
 
-  useEffect(()=>{
-    getHospitalList()
-  },[chosedDistrict])
+  useEffect(() => {
+    getBasicHospitalList()
+  }, [chosedDistrict ])
 
 
-  function setState() {
-    console.log("first")
-  }
-
-  function setDistrict(value) {
-    selectedDistricts = value
-  }
 
   function setPincode() {
     console.log(document.querySelector(".pincode-input").value)
@@ -105,24 +102,23 @@ export default function Search(props) {
 
   function checkSearchInput() {
 
-    if (selectedStates === "") {
+    if (chosedState === "") {
       alert("Please Select State")
     }
-    else if (selectedDistricts === "") {
+    else if (chosedDistrict === "") {
       alert("Please Select District")
     }
     else {
-      return hospList
+      return chosedDistrict
     }
   }
 
   //------------------------------------------- Advance Search Logic  -------------------------------------------------
 
 
-  const selectOption = (value) => {
-
-    if (!selectedOptions.includes(value)) {
-      selectedOptions.push(value)
+  function selectOption(value){
+    if (!selectedDistricts.includes(value)) {
+      setSelectedDistricts([...selectedDistricts , value])
       showTags(value)
     }
 
@@ -141,7 +137,8 @@ export default function Search(props) {
 
     let cross = document.createElement("div")
     cross.setAttribute("class", "cross")
-    cross.setAttribute("id", `${tagCount++}`)
+    cross.setAttribute("id", `${tagCount}`)
+    setTagCount(tagCount+1)
     cross.onclick = deleteTag
     tag.appendChild(cross)
 
@@ -152,13 +149,13 @@ export default function Search(props) {
 
   const deleteTag = (event) => {
 
+
     let tag = document.getElementById(event.target.id)
     let tagText = tag.firstChild.textContent
     tag.remove()
-
-    let index = selectedOptions.indexOf(tagText)
-    selectedOptions.splice(index, 1)
-    console.log(selectedOptions)
+    
+    let index = selectedDistricts.indexOf(tagText)
+    setSelectedDistricts(selectedDistricts.splice(index, 1))
 
   }
 
@@ -211,15 +208,10 @@ export default function Search(props) {
 
   //Returns List of Hospitals based on State and Districts
 
-  function getHospitalList() {
-
+  function getBasicHospitalList() {
+    
     try {
-      axios.get('http://localhost:8001/hospitalData/getHospList', {
-        params: {
-          state: chosedState,
-          district: chosedDistrict
-        }
-      })
+      axios.get(`http://localhost:8001/hospitalData/getHospList?district=${data}`)
         .then(function (response) {
 
           for (var ele of response.data) {
@@ -237,6 +229,11 @@ export default function Search(props) {
     }
 
   }
+
+  function getAdvHospitalList(){
+    return selectedDistricts
+  }
+
 
 
   return (<>
@@ -300,8 +297,7 @@ export default function Search(props) {
                     <Select styles={customStyles} options={State} className="search-input"
                       onChange={
                         opt => {
-                          selectOption(opt.value)
-                          setState(opt.value)
+                          setChosedState(opt.value)
                         }
                       }
 
@@ -316,7 +312,9 @@ export default function Search(props) {
                       onChange={
                         opt => {
                           selectOption(opt.value)
-                          setDistrict(opt.value)
+                          if(!selectedDistricts.includes(opt.value)){
+                          }
+                          data = data + "_" + opt.value
                         }
                       }
                       id='state-input' value="District" placeholder="District" />
@@ -336,13 +334,13 @@ export default function Search(props) {
                 {
                   typeOfHospitals.map((ele) => {
                     return (
-                      <span> <input type="checkbox" name="" id="search-checkbox" /> {ele.value} </span>
+                      <span key={typeOfHospitals.length++} > <input type="checkbox" name="" id="search-checkbox" /> {ele.value} </span>
                     );
                   })
                 }
               </div>
 
-              <button className="btn-sm " type="button" > Save </button>
+              <button className="btn-sm " type="button" onClick={ ()=>{ props.getAdvSearchParams(getAdvHospitalList())} } > Save </button>
             </div>
 
           </div>

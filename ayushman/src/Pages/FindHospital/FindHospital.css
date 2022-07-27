@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;
     z-index: 10;
+    margin-top: 10px;
   }
   
   .search-box:nth-child(1){
@@ -49,4 +50,5 @@
     align-items: center;
     flex-direction: column;
     padding: 20px 10px;
+    height: max-content;
   }
