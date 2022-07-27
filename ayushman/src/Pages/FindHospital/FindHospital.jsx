@@ -11,47 +11,58 @@ import HospitalCards from '../../Components/HospitalCards/HospitalCards'
 
 export default function FindHospital() {
 
+  //--------------------------------------------- Declaration of Variables -----------------------------------------------
+
   const [advSearch, setAdvSearch] = useState(true)
   const [listOfDistricts, setListOfDistricts] = useState([])
   const [chosedDistrict, setChosedDistrict] = useState("")
   const [List, setList] = useState([])
   const [hospList, setHospList] = useState([])
+  
 
+  //--------------------------------------------- References ---------------------------------------------------
 
   const cardSection = useRef()
+
+ //--------------------------------------------- Functions to Recieve Data ---------------------------------------------------
+
+ // function to recieve Data from Basic Search
 
   function getData(data) {
     setChosedDistrict(data)
   }
 
+ // function to recieve Data from Advanced Search
+
   function getAdvSearchParams(data) {
     setListOfDistricts(data)
   }
 
-  useEffect(() => {
-    if (chosedDistrict != '') {
+ //--------------------------------------------- UseEffects ---------------------------------------------------
 
+
+  useEffect(() => {
+
+    if (chosedDistrict != '') {  
       let newList = [chosedDistrict]
       listOfDistricts.forEach(element => {
         newList.push(element)
       })      
-      setList(newList)
+      setList(newList) //Update List of Districts
     }
   }, [chosedDistrict , listOfDistricts])
-
 
 
   useEffect(() => {
 
     let data = ""
-    List.forEach(ele=>{
-      data = data + "_" + ele
-    })
-
     let list = []
 
-    try {
+    List.forEach(ele=>{
+      data = data + "_" + ele //Data for Parameters
+    })
 
+    try {
       axios.get(`http://localhost:8001/hospitalData/getHospList?district=${data}`)
         .then(function (response) {
 
@@ -59,7 +70,7 @@ export default function FindHospital() {
             list.push(ele)
           }
 
-          setHospList(list)
+          setHospList(list) //Update List Of Hospitals
 
         })
         .catch(function (error) {
@@ -72,8 +83,9 @@ export default function FindHospital() {
 
   
   useEffect(() => {
-    
+  
     console.log(hospList)
+
     try {
       let root = ReactDOMClient.createRoot(cardSection.current)
       let HospList = []

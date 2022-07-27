@@ -210,6 +210,8 @@ export default function Search(props) {
 
   function getBasicHospitalList() {
     
+    let data = chosedDistrict
+
     try {
       axios.get(`http://localhost:8001/hospitalData/getHospList?district=${data}`)
         .then(function (response) {
