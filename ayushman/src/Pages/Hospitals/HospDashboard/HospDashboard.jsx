@@ -12,7 +12,7 @@ import Search from '../../../Components/Search/Search'
 import { useState } from 'react';
 import HospitalCards from '../../../Components/HospitalCards/HospitalCards';
 
-export default function HospDashboard() {
+export default function HospDashboard(props) {
 
   const [image, setImage] = useState("")
 
@@ -92,7 +92,8 @@ export default function HospDashboard() {
 
   const titleStyle = {
     paddingLeft: "23px",
-    marginTop: "10px"
+    margin: "10px 10px"
+
   }
 
 
@@ -101,13 +102,15 @@ export default function HospDashboard() {
   return (
     <>
 
+  { props.page === 'basicInfo' &&
+
       <div className="hosp-profile-section">
 
         <form action="">
 
           <div className="basicInfo ">
 
-            <p className='container-title' style={titleStyle}>Basic Information</p>
+            <p className='container-title ' style={titleStyle}>Basic Information</p>
 
             <div className="basicInfoContentForm ">
 
@@ -124,7 +127,7 @@ export default function HospDashboard() {
 
                 </div>
 
-                <div className='basicInfoform'>
+                <div className='basicInfoform '>
 
                   <span>MH1234</span>
                   <input type="text" className='hosp-name' placeholder='Hospital Name' />
@@ -144,12 +147,13 @@ export default function HospDashboard() {
                     }}>+</span>
                   </div>
 
-                  <input type="text" className="addressLine" placeholder='Address' />
+
 
                 </div>
               </div>
 
-              <div className='regionInput'>
+              <div className='regionInput '>
+              <input type="text" className="addressLine" placeholder='Address' />
                 <Search stateAndDistrictOnly={true} />
               </div>
 
@@ -157,7 +161,7 @@ export default function HospDashboard() {
 
           </div>
 
-          <div className="typeOfHosdp">
+          <div className="typeOfHosp">
 
             <p className='container-title' style={titleStyle}>Type of Hospital</p>
             <div className="typeOfHosp-container">
@@ -171,7 +175,7 @@ export default function HospDashboard() {
             </div>
           </div>
 
-          <div className="typeOfHosp">
+          <div className="otherBranches-container">
 
             <p className='container-title' style={titleStyle}>Other Branches</p>
 
@@ -179,7 +183,7 @@ export default function HospDashboard() {
               <div className="otherBranch-container ">
 
               </div>
-              <div className="selectHosp">
+              <div className="selectHosp ">
 
               </div>
               <span className="addBtn" onClick={() => {
@@ -195,6 +199,8 @@ export default function HospDashboard() {
         </form>
 
       </div>
+
+  }
 
 
     </>

@@ -45,8 +45,8 @@
 } 
 
 .branch-card-img{
-    width: 10em;
-    height: 9em;
+    width: 9em;
+    height: 8em;
 }
 
 
@@ -149,6 +149,6 @@
 }
 
 .branch-tags{
-    font-size: 12px;
-    padding: 8px 10px;
+    font-size: 11px;
+    padding: 5px 8px;
 }

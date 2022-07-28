@@ -20,7 +20,7 @@ export default function Hospital(value) {
         </div>
 
         <div className='hosp-dashboard '>
-          <HospDashboard/>
+          <HospDashboard page={value.value} />
         </div>
         
       </div>

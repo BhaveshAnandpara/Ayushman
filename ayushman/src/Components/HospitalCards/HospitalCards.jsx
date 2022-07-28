@@ -79,7 +79,7 @@ export default function HospitalCards(props) {
             {
                 branchTags.map((ele) => {
                   return (
-                    <span className='tag branch-tags'  value={ele.value}>{ele.value}</span>
+                    <span className='tag branch-tags'  value={ele.value} >{ele.value}</span>
                   );
                 })
               }
