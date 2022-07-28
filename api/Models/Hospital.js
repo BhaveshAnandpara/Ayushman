@@ -33,3 +33,64 @@ const HospitalSchema = new mongoose.Schema({
 })
 
     module.exports = mongoose.model("Hospital", HospitalSchema); //will create a Schema Name Hospital Which can be Accessed using 'new' keyword just like creating object
+
+
+
+    /*
+
+    Sample
+
+    {
+        "hosp_id":"MH1232",
+        "hospImage" : " ",
+        "name" : "Sevagram Hospital",
+        "address" : "Dummy Road",
+        "state" : "Maharashtra",
+        "district" : "Wardha",
+        "pincode" : 442001,
+        "map_url" : "",
+        "typeOfHosp" : "Semi-Government Hospital",
+        "otherBranch" : [""],
+        "noOfFeedbacks" : 0,
+        "noOfGrievances" : 0,
+        "phoneNos" : ["0000000001" , "0000000002"],
+        "facilities" : [
+            {
+            "facility" : "Ambulance",
+            "icon" : ""
+            },
+            {
+            "facility" : "Laboratory",
+            "icon" : ""
+            },
+            {
+            "facility" : "ATM",
+            "icon" : ""
+            },
+            {
+            "facility" : "Waiting Lounge",
+            "icon" : ""
+            },
+            {
+            "facility" : "Pharmacy",
+            "icon" : ""
+            },
+            {
+            "facility" : "Cafeteria",
+            "icon" : ""
+            } 
+        ],
+        "inventory":[
+            {
+                "item_name":"ICU Beds",
+                "is_for_emergency" : true,
+                "total_amount" : 20,
+                "available_amount":12,
+                "cost":3000,
+                "unit":"per day"
+            }
+        ]
+    
+    
+    }
+    */

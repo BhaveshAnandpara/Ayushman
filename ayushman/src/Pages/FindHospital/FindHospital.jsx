@@ -24,7 +24,7 @@ export default function FindHospital() {
 
   const cardSection = useRef()
 
- //--------------------------------------------- Functions to Recieve Data ---------------------------------------------------
+ //------------------------------------ Functions to Recieve Data ----------------------------------------------
 
  // function to recieve Data from Basic Search
 
@@ -84,7 +84,7 @@ export default function FindHospital() {
   
   useEffect(() => {
   
-    console.log(hospList)
+    // console.log(hospList)
 
     try {
       let root = ReactDOMClient.createRoot(cardSection.current)

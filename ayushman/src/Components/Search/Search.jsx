@@ -9,6 +9,7 @@ import myJSON from '../../JsonFiles/stateAndDistrict.json'
 
 export default function Search(props) {
 
+  //-------------------------------------------- Declarations --------------------------------
 
   const [chosedState, setChosedState] = useState("")
   const [chosedDistrict, setChosedDistrict] = useState("")

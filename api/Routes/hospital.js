@@ -30,7 +30,7 @@ router.post('/basicInfo', (req, res) => {
             map_url: map_url
         },
         hosp_profileImg: hospImage,
-        host_type: typeOfHosp,
+        hosp_type: typeOfHosp,
         phone_no: phoneNos,
         hosp_branch: otherBranch,
         no_of_feedbacks: " ",
