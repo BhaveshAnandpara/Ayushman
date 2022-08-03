@@ -9,12 +9,12 @@ import editIcon from '../../../Assets/Icons/camera.svg'
 import { createElement } from 'react';
 
 import Search from '../../../Components/Search/Search'
-import { useState } from 'react';
+import { useState  , useEffect } from 'react';
 import HospitalCards from '../../../Components/HospitalCards/HospitalCards';
 
 export default function HospDashboard(props) {
 
-  const [image, setImage] = useState("")
+  let hosp_id = "MH6942"
 
   let branch = ""
   let otherBranches = []
@@ -67,9 +67,10 @@ export default function HospDashboard(props) {
 
     root.render(<>
       {
+        
         otherBranches.map((ele) => {
           return (
-            <HospitalCards name={ele} isOtherBranch={true} />
+            <HospitalCards name={ele}  isOtherBranch={true} />
           )
         })
       }
@@ -93,10 +94,17 @@ export default function HospDashboard(props) {
   const titleStyle = {
     paddingLeft: "23px",
     margin: "10px 10px"
-
   }
 
+  function saveInfo(){
+    // setBasicInfo(localStorage.getItem('data'))
+  }
 
+  function saveInfo(){
+    // console.log(basicInfo)
+
+    // console.log(localStorage.getItem('name') )
+  }
 
 
   return (
@@ -106,7 +114,7 @@ export default function HospDashboard(props) {
 
       <div className="hosp-profile-section">
 
-        <form action="">
+        <div >
 
           <div className="basicInfo ">
 
@@ -129,8 +137,10 @@ export default function HospDashboard(props) {
 
                 <div className='basicInfoform '>
 
-                  <span>MH1234</span>
-                  <input type="text" className='hosp-name' placeholder='Hospital Name' />
+                  <span>{hosp_id}</span>
+                  <input type="text" className='hosp-name' placeholder='Hospital Name'  onChange={(e)=>{  //value={ basicInfo.name? basicInfo.name : null } 
+                      // localStorage.setItem('name',e.target.value)
+                  }} />
 
                   <div className='basicInfoPhoneNo '>
 
@@ -153,8 +163,12 @@ export default function HospDashboard(props) {
               </div>
 
               <div className='regionInput '>
-              <input type="text" className="addressLine" placeholder='Address' />
-                <Search stateAndDistrictOnly={true} />
+              <input type="text" className="addressLine" placeholder='Address'  /> 
+              {/* value={ basicInfo.address? basicInfo.address : "" } */}
+              
+                <Search stateAndDistrictOnly={true}  />  
+                {/* state={basicInfo.state} district={basicInfo.district} pincode={basicInfo.pincode} */}
+                
               </div>
 
             </div>
@@ -166,9 +180,12 @@ export default function HospDashboard(props) {
             <p className='container-title' style={titleStyle}>Type of Hospital</p>
             <div className="typeOfHosp-container">
               {
+                
                 typeOfHospitals.map((ele) => {
                   return (
-                    <span> <input type="checkbox" name="hospType" value={ele.value} id="search-checkbox" /> {ele.value} </span>
+                    <span> <input type="radio" name="hospType"   value={ele.value} id="search-checkbox" /> {ele.value} </span>
+                    // defaultChecked={ ele.value === basicInfo.typeOfHosp? true : false }
+                    
                   );
                 })
               }
@@ -193,10 +210,11 @@ export default function HospDashboard(props) {
 
           </div>
 
-          <button className='btn saveBtn'  >Save</button>
+          <button className='btn saveBtn' onClick={()=>{
+            saveInfo()
+          }} >Save</button>
 
-
-        </form>
+        </div>
 
       </div>
 

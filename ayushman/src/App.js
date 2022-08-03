@@ -1,6 +1,7 @@
 import './App.css';
-import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 
 
 import Home from './Pages/Home/Home'
@@ -22,8 +23,12 @@ import Hospital from './Pages/Hospitals/Hospital';
 import Test from './Pages/test'
 import FindHospital from './Pages/FindHospital/FindHospital';
 
+import setIsLogged from './States/actions-creators/index'
+
 function App() {
- 
+
+  const isLogged = useSelector(state=>state.isLogged)
+  console.log(isLogged)
   return (
    
     <div className="App">
@@ -36,14 +41,19 @@ function App() {
           <Route exact path="/test" element={<Test/>}></Route>
           <Route exact path="/findHospital" element={<FindHospital/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
-          <Route exact path="/hospitalDashboard" element={<Hospital value={"basicInfo"} />}></Route>
+
+          <Route exact path="/hospitalDashboard" element={ isLogged ? <Hospital value={"basicInfo"}/> : <Navigate to={'/login/hospital'} /> }></Route>
           <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/hospitalDashboard/update" element={<Hospital value={"update"} />}></Route>
           <Route exact path="/hospitalDashboard/facilities" element={<Hospital value={"facilities"} />}></Route>
           <Route exact path="/hospitalDashboard/inventory" element={<Hospital value={"inventory"} />}></Route>
           <Route exact path="/hospitalDashboard/rates" element={<Hospital value={"rates"} />}></Route>
           <Route exact path="/hospitalDashboard/performanceReport" element={<Hospital value={"performanceReport"} />}></Route>
-          <Route exact path="/login" element={<Login LoginItem={"Patient"} />}></Route>
+
+          <Route exact path="/login" element={<Login loginItem={"Patient"} />}></Route>
+          <Route exact path="/login/patient" element={<Login loginItem={"Patient"} />}></Route>
+          <Route exact path="/login/hospital" element={  <Login loginItem={"Hospital"} />  }></Route>
+          <Route exact path="/login/medicalCouncil" element={<Login loginItem={"MedicalCouncil"} />}></Route>
         </Routes>
       </BrowserRouter>
      

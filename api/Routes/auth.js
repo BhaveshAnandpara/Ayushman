@@ -81,15 +81,15 @@ router.post('/login', async (req, res) => {
 
         const fullHash = `${hash}.${expires}` //hash with Expiry
 
-        client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
-            body : `Your OTP for LOGIN is ${OTP}`,
-            from : +19106684570,
-            to : `+91${phoneNo}`
-        }).then((msg) => {
-            console.log(msg)
-        } ).catch( (err)=>{
-            console.log(err)
-        })
+        // client.messages.create({   //UnComment For only Checking ( Requires Money BRUHHHHHHHH !!!!!!!!!!!!)
+        //     body : `Your OTP for LOGIN is ${OTP}`,
+        //     from : +19106684570,
+        //     to : `+91${phoneNo}`
+        // }).then((msg) => {
+        //     console.log(msg)
+        // } ).catch( (err)=>{
+        //     console.log(err)
+        // })
 
         res.json({ phoneNo, hash: fullHash, password, OTP })
     } catch (err) {

@@ -363,19 +363,19 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setChosedState(opt.value)} id='state-input' placeholder="State" />
+                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setChosedState(opt.value)} defaultInputValue={ props.state }  id='state-input' placeholder="State" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setChosedDistrict(opt.value)} id='state-input' placeholder="District" />
+                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setChosedDistrict(opt.value)} defaultInputValue={ props.district } id='state-input' placeholder="District" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <input type="text" className='pincode-input' onBlur={() => {
+                  <input type="text" className='pincode-input' value={props.pincode} onBlur={() => {
                     setPincode()
                   }} placeholder='Pin code'></input>
                 </div>

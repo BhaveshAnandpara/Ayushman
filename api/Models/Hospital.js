@@ -15,7 +15,7 @@ const HospitalSchema = new mongoose.Schema({
     hosp_type : { type:String , required:false },
     hosp_branch : { type:Array , required:false },
     no_of_feedbacks : { type : Number },
-    phone_no : { type:Array },
+    phone_no : { type:Array , required:false},
     facilities : { 
                    facility : { type:String }, 
                    icon     : { type:String } 
