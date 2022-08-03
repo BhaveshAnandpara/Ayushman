@@ -27,8 +27,8 @@ import setIsLogged from './States/actions-creators/index'
 
 function App() {
 
-  const isLogged = useSelector(state=>state.isLogged)
-  console.log(isLogged)
+  const user = useSelector(state=>state.User)
+  console.log(user)
   return (
    
     <div className="App">
@@ -42,7 +42,7 @@ function App() {
           <Route exact path="/findHospital" element={<FindHospital/>}></Route>
           <Route exact path="/hospitalProfile" element={<HospitalProfile/>}></Route>
 
-          <Route exact path="/hospitalDashboard" element={ isLogged ? <Hospital value={"basicInfo"}/> : <Navigate to={'/login/hospital'} /> }></Route>
+          <Route exact path="/hospitalDashboard" element={ user.isLogged ? <Hospital value={"basicInfo"}/> : <Navigate to={'/login/hospital'} /> }></Route>
           <Route exact path="/hospitalDashboard/basicInfo" element={<Hospital value={"basicInfo"} />}></Route>
           <Route exact path="/hospitalDashboard/update" element={<Hospital value={"update"} />}></Route>
           <Route exact path="/hospitalDashboard/facilities" element={<Hospital value={"facilities"} />}></Route>
