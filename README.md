@@ -17,7 +17,7 @@ you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/Fina
 <h2>Presentation </h2>
 
 <p>Slide 1 : </p>
-![Slide1](//ProjectMedia//slide1.png)
+![Slide1](/ProjectMedia/slide1.png)
 
 <p>Slide 2 : </p>
 ![Slide2](//ProjectMedia//slide2.png)
