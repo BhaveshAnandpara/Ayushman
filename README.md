@@ -17,19 +17,19 @@ you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/Fina
 <h2>Presentation </h2>
 
 <p>Slide 1 : </p>
-<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide1.png" width="1600" height="900" />
+<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide1.png" width="1600" height="700" />
 
 <p>Slide 2 : </p>
-![Slide2](//ProjectMedia//slide2.png)
+<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide2.png" width="1600" height="700" />
 
 <p>Slide 3 : </p>
-![Slide3](//ProjectMedia//slide3.png)
+<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide3.png" width="1600" height="700" />
 
 <p>Slide 4 : </p>
-![Slide4](//ProjectMedia//slide4.png)
+<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide4.png" width="1600" height="700" />
 
 <p>Slide 5 : </p>
-![Slide5](//ProjectMedia//slide5.png)
+<img src="https://github.com/BhaveshAnandpara/Ayushman/blob/f0f08af0ae7d9934bba15e5a43d9d11ac5de0a46/ProjectMedia/slide5.png" width="1600" height="700" />
 
 
 
