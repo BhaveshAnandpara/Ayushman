@@ -17,19 +17,19 @@ you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/Fina
 <h2>Presentation </h2>
 
 <p>Slide 1 : </p>
-![Slide1](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide1.png)
+![Slide1](https://github.com/BhaveshAnandpara/Ayushman/tree/master/ProjectMedia/slide1.png)
 
 <p>Slide 2 : </p>
-![Slide2](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide2.png)
+![Slide2](https://github.com/BhaveshAnandpara/Ayushman/tree/master/ProjectMedia/slide2.png)
 
 <p>Slide 3 : </p>
-![Slide3](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide3.png)
+![Slide3](https://github.com/BhaveshAnandpara/Ayushman/tree/master/ProjectMedia/slide3.png)
 
 <p>Slide 4 : </p>
-![Slide4](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide4.png)
+![Slide4](https://github.com/BhaveshAnandpara/Ayushman/tree/master/ProjectMedia/slide4.png)
 
 <p>Slide 5 : </p>
-![Slide5](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide5.png)
+![Slide5](https://github.com/BhaveshAnandpara/Ayushman/tree/master/ProjectMedia/slide5.png)
 
 
 
