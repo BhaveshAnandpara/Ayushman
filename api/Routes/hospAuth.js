@@ -31,11 +31,22 @@ router.post('/hospLogin', async (req, res) => {
                 res.status(401).json("Incorrect Password")
             }
             else {
-                res.status(200).json("Login Confirmed")
+
+
+                const accessToken = jwt.sign({hospital},process.env.SECRET_KEY,{expiresIn:'20m'})
+
+                const {hosp_password , ...info} = hospital._doc
+                res.status(200).json({
+                    isAuthenticated : true,
+                    accessToken:accessToken,
+                    data:info
+                })
             }
 
         }catch(err){
-            res.status(401).send("Invalid Hospital ID")
+            console.log(err)
+            res.status(401).json(err)
+
         }
 
     } catch (err) {

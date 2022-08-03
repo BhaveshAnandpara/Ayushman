@@ -52,10 +52,7 @@ export default function Login(props) {
       axios(config)
         .then(function (response) {
             console.log(response.data)
-            setIsLogged({
-              isLogged:true,
-              data:response.data
-            })
+            setIsLogged(response.data)
             navigate('/hospitaldashboard')
         })
         .catch(function (error) {
