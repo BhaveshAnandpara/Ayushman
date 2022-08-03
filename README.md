@@ -1,5 +1,8 @@
 > This is a Idea solution for a Problem statement in Smart India Hackathon ( SIH ) 2022 by DRDO
 
+<h3> Problem Statement ID </h3>
+<p> NR1168 </p>
+
 <h3> Problem Statement Title </h3>
 <p>Develop Solution/Application to regulate Private health care sector in India from exploiting people during medical emergencies and pandemic situations.</p>
 
@@ -37,9 +40,9 @@ you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/Fina
 Ayushman is a National Information Portal related to medical aid. It is a Project developed for the sake of Smart India Hackathon ( SIH ) 2022
 . We are `Team AYUSHYAMN` .
 ### Team Members
-[Bhavesh Anandpara ( Team Leader ](https://www.linkedin.com/in/bhavesh-anandpara-a95461201/)
-[Vaishnavi Bhende]( https://www.linkedin.com/in/vaishnavi-bhende-b16942221/ )
-[Vedanti Khode](https://www.linkedin.com/in/vedanti-khode-0a2763210/)
-[Shivam Charde](https://www.linkedin.com/in/shivam-charde-a68170212/)
-[Chanchal Hiwanj](https://www.linkedin.com/in/chanchal-hiwanj-9a53a620b/)
-[Pranjal Panchawate](https://www.linkedin.com/in/pranjal-panchawate-384607226/)
+#[Bhavesh Anandpara ( Team Leader ](https://www.linkedin.com/in/bhavesh-anandpara-a95461201/)
+#[Vaishnavi Bhende]( https://www.linkedin.com/in/vaishnavi-bhende-b16942221/ )
+#[Vedanti Khode](https://www.linkedin.com/in/vedanti-khode-0a2763210/)
+#[Shivam Charde](https://www.linkedin.com/in/shivam-charde-a68170212/)
+#[Chanchal Hiwanj](https://www.linkedin.com/in/chanchal-hiwanj-9a53a620b/)
+#[Pranjal Panchawate](https://www.linkedin.com/in/pranjal-panchawate-384607226/)
