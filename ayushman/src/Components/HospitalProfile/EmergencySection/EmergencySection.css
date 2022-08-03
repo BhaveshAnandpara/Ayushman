@@ -1,0 +1,170 @@
+.path-items>span {
+    flex-direction: row;
+    padding: 0 27px 0;
+    border: 0ch;
+}
+
+.hospital-img{
+    width: 15vw;
+    height: 15vw;
+    background-size: cover;
+    background-image: url('../../../Assets/Images/hospImage.png');
+    margin-right: 20px;
+
+}
+
+.hospProfileContainer2 {
+    width:18%;
+    height:180px;
+    background-size: cover;
+    
+    /* margin: 30px 20px; */
+}
+.hospProfileContainer1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* .hospital-maps-img{
+    border: solid black;
+    width: 200px;
+    margin: 30px 20px;
+} */
+.hospital-basicInfo{
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.main-EmergencySection {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+/* .EmergencySection{
+    width: 80%;
+} */
+
+.section-title {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--ligh-blue);
+}
+
+.hospital-basicInfo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+ 
+}
+
+.hospital-basicInfo-container>div {
+    text-align: center;
+
+    margin: 29px;
+    padding: 14px;
+    /* width: 500px; */
+}
+
+.types-hos {
+    display: flex;
+}
+
+.types-hos>div {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 100px;
+}
+
+.type1 {
+    display: inline-block;
+    background-color: #D5EBFF;
+
+
+}
+
+.type2 {
+    display: inline-block;
+    background-color: #D5EBFF;
+}
+
+
+.EmergencySection1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    gap: 1px;
+    padding: 20px;
+
+
+}
+
+.EmergencySection2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 60px;
+
+}
+
+.names {
+    width: 159px;
+    height: 40px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 112%;
+    color: #3E80BC;
+}
+
+.count {
+    width: 199px;
+height: 56px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 200%;
+color: #0D4F8C;
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.Arrow{
+    position: absolute;
+    color: #ADD7FF;
+}
+.Arrow1{
+    position: absolute;
+    color: #3E80BC;
+}
+.path-items > span:not(:nth-child(5)){
+    width: 125px;
+height: 27px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+    color: #ADD7FF;
+}
+.path-items > span:nth-child(5){
+    width: 115px;
+height: 27px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+    color: #3E80BC;
+}

@@ -1,0 +1,27 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ligh-blue);
+    padding: 10px 75px;
+}
+
+.nav-items > * , .nav-login > *{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    border-right: 2px solid var(--subtitle);
+    padding: 0 27px 0 0 ;
+    color: var(--subtitle);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-items > *:not(:nth-child(1)){
+    padding-left: 27px;
+}
+
+.nav-login > *{
+    border: none ;
+    padding-right: 0;
+}

@@ -1,7 +1,30 @@
 import React from 'react'
+import '../Hospitals/Hospital.css'
 
-export default function Hospital() {
+import Header from '../../Components/Header/Header'
+import Navbar from '../../Components/Navbar/Navbar'
+import HospitalNavbar from './HospitalNavbar/HospitalNavbar'
+import HospDashboard from './HospDashboard/HospDashboard'
+
+export default function Hospital(value) {
   return (
-    <div>Hospital</div>
+    <>
+    <Header />
+      <Navbar />
+
+    < section>
+      <div className='hospContainer'>
+
+        <div className='hosp-navbar' >
+          <HospitalNavbar value={value.value}/>
+        </div>
+
+        <div className='hosp-dashboard '>
+          <HospDashboard page={value.value} />
+        </div>
+        
+      </div>
+    </section>
+    </>
   )
 }

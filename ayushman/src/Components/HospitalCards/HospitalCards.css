@@ -1,0 +1,154 @@
+
+.card , .branch-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: fit-content;
+    max-width: 1100px;
+    min-width: 1100px;
+    padding: 20px 30px;
+    width: 80%;
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+    background-color: var(--ultra-light);
+    font-family: var(--primary-font);
+}
+
+.branch-card{
+    max-width: 450px;
+    min-width: 450px;
+    align-items: flex-start;
+    padding: 20px 20px;
+    position: relative;
+    display: inline-flex;
+    left: 0%;
+    transform: translateX(0%);
+    margin: 0px 10px 10px 0px ;
+}
+
+
+
+ .card-img , .branch-card-img{
+    display: inline-block;
+    background-image: url("../../Assets/Images/hospImage.png");
+    background-size: cover;
+    width: 17em;
+    height: 17em;
+    opacity: 0.8;
+
+} 
+
+.branch-card-img{
+    width: 9em;
+    height: 8em;
+}
+
+
+.card-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.card-info-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.card-info-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 160px;
+    width: 150px;
+    margin-right: 60px;
+    color: var(--subtitle)
+}
+
+.card-info-box > span {
+    margin: 14px 0px;
+    height: 38px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 132%;
+}
+
+.card-info-box > p {
+    font-size: 1.5em;
+
+}
+
+.card-info-box:nth-child(4){
+    margin-right: 0;
+
+
+}
+
+
+
+.card-info-box-text{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 112%;
+    text-align: center;
+    margin: 0%;
+}
+
+.card-hosp-name , .branch-card-hosp-name{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 77px;
+    text-align: left;
+    margin: 0%;
+    color: var(--title);
+}
+
+.branch-card-hosp-name{
+    font-size: 32px;
+    line-height: 30px;
+}
+
+.card-address , .branch-card-address{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    margin: 0%;
+    text-align: left;
+    
+    color: var(--subtitle);
+}
+
+.branch-card-address{
+    font-size: 12px;
+}
+
+.card-hosp-text{
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.branchTags{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.branch-tags{
+    font-size: 11px;
+    padding: 5px 8px;
+}

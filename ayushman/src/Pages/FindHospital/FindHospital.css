@@ -1,0 +1,54 @@
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-top: 10px;
+  }
+  
+  .search-box:nth-child(1){
+    z-index: 1;
+  }
+  
+  .advSearchToggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* z-index: -1;
+    position: relative; */
+  }
+  
+  .displayToggle {
+    display: none;
+  }
+  
+  .advSearchBtn {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    color: var(--subtitle);
+    cursor: pointer;
+    width: 80%;
+    user-select: none;
+  }
+  
+  section{
+    width: 98%;
+    height: 100vh;
+  }
+
+  .hospCardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 10px;
+    height: max-content;
+  }

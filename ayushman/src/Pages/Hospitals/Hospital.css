@@ -1,0 +1,26 @@
+.hospContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+
+.hospNavbar{
+    width: 100%;
+    justify-content: center;
+}
+
+.hosp-navbar{
+    height: 99%;
+    width: 17%;
+}
+
+.hosp-dashboard{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+

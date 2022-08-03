@@ -1,0 +1,257 @@
+.search-container {
+    background-color: var(--ultra-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5px 40px 20px 40px;
+    max-width: 80%;
+    min-width: 80%;
+    height: 30%;
+    transform: translateX(0%); /* Do not remove this cause Dropdown error */
+}
+
+.search-container>* {
+    width: 100%;
+}
+
+.container-title {
+    color: var(--title);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 38px;
+    margin: 0%;
+}
+
+.all-search-parameters {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.advSearch{
+    margin-top: 25px;
+    align-items: flex-end;
+}
+
+.search-parameters {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 85%;
+}
+
+.search-parameters > div {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.stateAndDistrict {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.search-input {
+    font-size: 18px;
+    width: 22em;
+    padding: 5px 0px;
+    border: none;
+    color: var(--title);
+    outline: none;
+    background-color: var(--light-blue-bg);
+    border-radius: 3px;
+}
+
+.dashboard-select-region{
+    width: 18em;
+}
+
+
+
+.search-input::placeholder {
+    color: var(--title);
+}
+
+.search-parameters>div:nth-child(2) {
+    overflow: hidden;
+}
+
+.SearchByHospitalName {
+
+    width: 100%;
+    position: inherit !important;
+    /* padding: 15px 0px 15px 24px; */
+    margin: 0%;
+
+}
+
+.searchButton {
+    background-color: var(--title);
+    color: var(--light-blue-bg);
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.stateAndDistrict > div {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.advSearch-stateAndDistrict{
+    margin-bottom: 0% !important;
+}
+
+.search-input-conatainer {
+    background-color: var(--light-blue-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    padding-right: 10px;
+}
+
+/* Dropdowns */
+
+.state-dropdown {
+    background: var(--light-blue-bg);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--subtitle);
+    border-radius: 4px;
+
+    /* position: absolute; */
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.state-dropdown>p {
+    width: 96%;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--subtitle);
+
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 38px;
+    color: var(--title);
+
+}
+
+.state-dropdown>p:nth-last-child(1) {
+    border-bottom: none;
+
+}
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+    margin-bottom: 0% !important;
+    width: 100%;
+}
+
+
+
+.tag {
+
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    margin: 10px 20px 0px 0px;
+
+    padding: 10px 15px;
+    background-color: var(--text-blue);
+    color: var(--light-blue-bg);
+
+
+}
+
+#tagText {
+    font-size: 18px;
+    font-style: var(--primary-font);
+    margin-right: 15px;
+    color: white;
+}
+
+.cross {
+    background-image: url(../../Assets/Icons/x-white.svg);
+    display: block;
+    height: 24px;
+    width: 24px;
+    transform: scale(0.8);
+    cursor: pointer;
+
+}
+
+.typeOfHosp-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.typeOfHosp-container>* {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--subtitle);
+    padding: 8px 30px;
+}
+
+#search-checkbox{
+    cursor: pointer;
+}
+
+.pincode-input{
+    font-size: 18px;
+    width: 15em;
+    padding: 5px 0px;
+    border: none;
+    color: var(--title);
+    outline: none;
+    background-color: var(--light-blue-bg);
+    border-radius: 3px;
+    padding: 14px 10px 14px 25px;
+}
+
+.stateAndDistrict-dashboard{
+    display: flex;
+    align-items: center;
+}
+
+.stateAndDistrict-dashboard > div{
+    margin: 0px 23px;
+}
