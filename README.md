@@ -1,15 +1,41 @@
-#This is a Idea solution for a Problem statement in Smart India Hackathon ( SIH ) 2022 by DRDO
+> This is a Idea solution for a Problem statement in Smart India Hackathon ( SIH ) 2022 by DRDO
 
-<h2>Problem Statement Title</h2>
+<h3> Problem Statement Title </h3>
 <p>Develop Solution/Application to regulate Private health care sector in India from exploiting people during medical emergencies and pandemic situations.</p>
 
-<h3> Description <h3/>
+<h3> Description </h3>
 <p>During Covid – 19 crisis, many private hospitals had charged huge and unimaginable amounts from patients and made enormous profits taking advantage of panic conditions. Notwithstanding of spending huge amounts many families lost their members and in some instances hospitals even demanded clearance of pending bills for handing over bodies to their families. There was no proper information about availability of beds and details of treatment provided etc. In order to curb this exploitation by private hospitals, there is a requirement of national information portal which can regulate all the private hospitals and provide accurate details of rates and medical facilities available in the private hospitals across the country to guide the citizens to get affordable medical emergency services as per their choice and availability.</p>
   
-<h2/> Our Solution <h2/> 
+<h3> Our Solution </h3> 
+
+> All of our Project realted Media files are in Project Media Folders
+
+We have created a [Youtube Video](https://youtu.be/ulfK5kZON-U) for the Soluiton
+
+you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/FinalPPT.pptx) the Presentation of 5 Slides that our Team Prepared 
+
+<h2>Presentation </h2>
+
+<p>Slide 1 : </p>
+![Slide1](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide1.png)
+
+<p>Slide 2 : </p>
+![Slide2](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide2.png)
+
+<p>Slide 3 : </p>
+![Slide3](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide3.png)
+
+<p>Slide 4 : </p>
+![Slide4](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide4.png)
+
+<p>Slide 5 : </p>
+![Slide5](https://github.com/BhaveshAnandpara/Ayushman/tree/master/Project%20Media/slide5.png)
 
 
-Ayushman is a National Information Portal related to medical aid. It is a Project developed for the sake of Smart India Hackathon ( SIH ) 2022. We are `Team AYUSHYAMN` .
+
+
+Ayushman is a National Information Portal related to medical aid. It is a Project developed for the sake of Smart India Hackathon ( SIH ) 2022
+. We are `Team AYUSHYAMN` .
 ### Team Members
 Bhavesh Anandpara ( Team Leader )  
 Vaishnavi Bhende  
