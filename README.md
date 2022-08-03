@@ -40,9 +40,10 @@ you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/Fina
 Ayushman is a National Information Portal related to medical aid. It is a Project developed for the sake of Smart India Hackathon ( SIH ) 2022
 . We are `Team AYUSHYAMN` .
 ### Team Members
-#[Bhavesh Anandpara ( Team Leader ](https://www.linkedin.com/in/bhavesh-anandpara-a95461201/)
-#[Vaishnavi Bhende]( https://www.linkedin.com/in/vaishnavi-bhende-b16942221/ )
-#[Vedanti Khode](https://www.linkedin.com/in/vedanti-khode-0a2763210/)
-#[Shivam Charde](https://www.linkedin.com/in/shivam-charde-a68170212/)
-#[Chanchal Hiwanj](https://www.linkedin.com/in/chanchal-hiwanj-9a53a620b/)
-#[Pranjal Panchawate](https://www.linkedin.com/in/pranjal-panchawate-384607226/)
+[Bhavesh Anandpara ( Team Leader ](https://www.linkedin.com/in/bhavesh-anandpara-a95461201/)
+<br/>
+[Vaishnavi Bhende]( https://www.linkedin.com/in/vaishnavi-bhende-b16942221/ )<br/>
+[Vedanti Khode](https://www.linkedin.com/in/vedanti-khode-0a2763210/)<br/>
+[Shivam Charde](https://www.linkedin.com/in/shivam-charde-a68170212/)<br/>
+[Chanchal Hiwanj](https://www.linkedin.com/in/chanchal-hiwanj-9a53a620b/)<br/>
+[Pranjal Panchawate](https://www.linkedin.com/in/pranjal-panchawate-384607226/)
