@@ -7,6 +7,7 @@ import '../HospDashboard/HospDashboard.css'
 import HospIcon from '../../../Assets/Icons/HospIcon.svg'
 import editIcon from '../../../Assets/Icons/camera.svg'
 import { createElement } from 'react';
+import { useSelector } from 'react-redux';
 
 import Search from '../../../Components/Search/Search'
 import { useState  , useEffect } from 'react';
@@ -14,7 +15,8 @@ import HospitalCards from '../../../Components/HospitalCards/HospitalCards';
 
 export default function HospDashboard(props) {
 
-  let hosp_id = "MH6942"
+  const user = useSelector(state=>state.User)
+  console.log(user)
 
   let branch = ""
   let otherBranches = []
@@ -137,7 +139,7 @@ export default function HospDashboard(props) {
 
                 <div className='basicInfoform '>
 
-                  <span>{hosp_id}</span>
+                  <span>{user.hosp_id}</span>
                   <input type="text" className='hosp-name' placeholder='Hospital Name'  onChange={(e)=>{  //value={ basicInfo.name? basicInfo.name : null } 
                       // localStorage.setItem('name',e.target.value)
                   }} />
