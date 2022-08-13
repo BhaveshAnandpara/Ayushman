@@ -15,7 +15,7 @@
 
 We have created a [Youtube Video](https://youtu.be/ulfK5kZON-U) for the Soluiton
 
-you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/FinalPPT.pptx) the Presentation of 5 Slides that our Team Prepared 
+you can [download](https://github.com/BhaveshAnandpara/Ayushman/blob/master/ProjectMedia/FinalPPT.pptx) the Presentation of 5 Slides that our Team Prepared 
 
 <h2>Presentation </h2>
 
