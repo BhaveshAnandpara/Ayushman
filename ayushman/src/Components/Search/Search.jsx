@@ -96,7 +96,9 @@ export default function Search(props) {
 
 
   function setPincode() {
-    console.log(document.querySelector(".pincode-input").value)
+    let pincode = document.querySelector(".pincode-input").value
+    // console.log({state:chosedState , distrcit:chosedDistrict , pincode : pincode})
+    props.getAddressData({state:chosedState , district:chosedDistrict , pincode : pincode})
   }
 
   //Checks Whether Inputs value are filled or not
@@ -363,13 +365,20 @@ export default function Search(props) {
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={opt => setChosedState(opt.value)} defaultInputValue={ props.state }  id='state-input' placeholder="State" />
+                  <Select styles={customStyles} options={State} className="search-input dashboard-select-region" onChange={
+                      (opt) => setChosedState(opt.value)
+                    
+                  }
+                      
+                     defaultInputValue={ props.state }   id='state-input' placeholder="State" />
                 </div>
               </div>
 
               <div className=''>
                 <div className='search-input-conatainer'>
-                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={opt => setChosedDistrict(opt.value)} defaultInputValue={ props.district } id='state-input' placeholder="District" />
+                  <Select styles={customStyles} options={District} className="search-input dashboard-select-region" onChange={
+                      opt => setChosedDistrict(opt.value) 
+                    } defaultInputValue={ props.district } id='state-input' placeholder="District" />
                 </div>
               </div>
 

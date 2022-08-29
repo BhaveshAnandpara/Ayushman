@@ -171,8 +171,8 @@ export default function Login(props) {
 
             <div className='hospital-container'>
               <div className='hospital-container-1 '>
-                <input type="text" className='hospIDInput' maxLength={10} defaultValue={""} placeholder="Hospital ID" />
-                <input type="text" className='passInput' maxLength={50} defaultValue={""} placeholder="Password" />
+                <input type="text" className='hospIDInput' maxLength={10} defaultValue={""} placeholder="MH1232" />
+                <input type="text" className='passInput' maxLength={50} defaultValue={""} placeholder="1234" />
               </div>
               <button type="button" className='btn' onClick={() => {
                 hospLogin()

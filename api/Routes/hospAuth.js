@@ -20,32 +20,35 @@ router.post('/hospLogin', async (req, res) => {
     const password = req.body.password
 
     try {
-        
-        try{
-            const hospital = await Hospital.findOne({ hosp_id: hospID }) //Find hospital in Database by PhoneNo
+
+        try {
+            const hospital = await Hospital.findOne({ hosp_id: hospID }) //Find hospital in Database by Hosp ID
             const hospPassword = hospital.hosp_password
             var bytes = CryptoJS.AES.decrypt(hospPassword, process.env.SECRET_KEY); //Decrypt the Encrypted Password
             var originalPass = bytes.toString(CryptoJS.enc.Utf8); //Original Password
 
-            if (originalPass !== password) {
+            
+            if (originalPass !== JSON.stringify(password)) {
                 res.status(401).json("Incorrect Password")
             }
             else {
 
 
-                const accessToken = jwt.sign({hospital},process.env.SECRET_KEY,{expiresIn:'20m'})
+                const accessToken = jwt.sign({ hospital }, process.env.SECRET_KEY, { expiresIn: '20m' })
 
-                const {hosp_password , ...info} = hospital._doc
+                const { hosp_password, ...info } = hospital._doc
+                console.log(info)
+
                 res.status(200).json({
-                    isAuthenticated : true,
-                    accessToken:accessToken,
-                    data:info
+                    msg : "Login Sucessfull",
+                    isAuthenticated: true,
+                    accessToken: accessToken,
+                    data: info
                 })
             }
 
-        }catch(err){
-            console.log(err)
-            res.status(401).json(err)
+        } catch (err) {
+            res.status(401).json({msg:"Error Occurred",err})
 
         }
 
@@ -59,19 +62,25 @@ router.post('/hospLogin', async (req, res) => {
 router.post('/createHosp', async (req, res) => {
 
     try {
-        const id = ""+Math.floor(Math.random() * 10000)
-        let pass = Math.floor(Math.random() * 10000000)
-        let phoneno = Math.floor(Math.random() * Math.pow(10,10))
-        
+
+        const hosp_id = req.body.hosp_id
+        let hosp_password = req.body.password
+
+        hosp_password = CryptoJS.AES.encrypt(JSON.stringify(hosp_password), process.env.SECRET_KEY).toString()
+
         try {
-            const newHosp = new Hospital({ hosp_id: id, hosp_password: CryptoJS.AES.encrypt(JSON.stringify(pass),process.env.SECRET_KEY).toString() , phone_no:[phoneno] })
+            const newHosp = new Hospital({ hosp_id: hosp_id, hosp_password: hosp_password })
             const hosp = await newHosp.save()
-            res.send({hosp,pass})
+            res.send({ msg: "Hospital Created", hosp })
+
         } catch (err) {
-            console.log(err)
+
+            res.json({ msg: "Alreay registered ", err })
+
         }
+
     } catch (err) {
-        res.json(err)
+        res.json({ msg: "Error Occured ", err })
     }
 
 })
