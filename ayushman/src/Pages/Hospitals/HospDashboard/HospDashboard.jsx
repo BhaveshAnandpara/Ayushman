@@ -258,7 +258,7 @@ export default function HospDashboard(props) {
 
         otherBranches.map((ele) => {
           return (
-            <HospitalCards name={ele} isOtherBranch={true} />
+            <HospitalCards id={ele} isOtherBranch={true} />
           )
         })
       }

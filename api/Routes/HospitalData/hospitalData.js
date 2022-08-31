@@ -10,27 +10,41 @@ const { set } = require("mongoose")
 router.get('/getHospList', async (req, res) => {
 
     try {
-        const data = req.query.district
-        let districts = data.split("_")
+        if (req.query.district) {
 
-        hospList = []
+            const data = req.query.district
+            let districts = data.split("_")
 
-            for( district of districts ){
-                const returnedHospList = await Hospital.find({"hosp_address.district":district}) 
-                for( hosp of returnedHospList ){
+            hospList = []
+
+            for (district of districts) {
+                const returnedHospList = await Hospital.find({ "hosp_address.district": district })
+                for (hosp of returnedHospList) {
                     hospList.push(hosp)
                 }
             }
 
-        res.status(201).json(hospList)
-        
+            res.status(201).json(hospList)
+
+        }
+        else {
+
+            let hospList = []
+            const returnedHospList = await Hospital.find()
+            for (hosp of returnedHospList) {
+                hospList.push({name : hosp.hosp_name , id : hosp.hosp_id , uniqueID : hosp._id  } )
+            }
+            res.status(201).json(hospList)
+
+        }
+
     } catch (err) {
         res.status(201).json(err)
     }
 
 })
 
-router.post('/updateData' , async (req,res)=>{
+router.post('/updateData', async (req, res) => {
 
     let recievedData = req.body.data
     let hospID = req.body.hospID
@@ -39,22 +53,21 @@ router.post('/updateData' , async (req,res)=>{
     const keys = Object.keys(recievedData)
     const values = Object.values(recievedData)
 
-    try{
-        
+    try {
+
         let newData = {}
-        
-        keys.forEach((key,index) => {
+
+        keys.forEach((key, index) => {
             newData[key] = JSON.parse(values[index])
         });
-        
+
         console.log(newData)
 
-        const hosp = await Hospital.updateOne({ hosp_id  : hospID} , { $set : newData }  )
+        const hosp = await Hospital.updateOne({ hosp_id: hospID }, { $set: newData })
         res.json("Updated Successfully")
 
 
-    }catch(err)
-    {
+    } catch (err) {
         console.log(err)
         res.json(err)
     }
