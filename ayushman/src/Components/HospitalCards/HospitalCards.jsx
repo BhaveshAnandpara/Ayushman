@@ -3,8 +3,13 @@ import '../HospitalCards/HospitalCards.css'
 import bedIcon from '../../Assets/Icons/bed-icon.svg'
 import oxygenIcon from '../../Assets/Icons/oxygen-icon.svg'
 import Navbar from '../Navbar/Navbar'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+
 
 export default function HospitalCards(props) {
+
 
     function randomNum(){
         return Math.floor(Math.random() * 50)
@@ -16,10 +21,12 @@ export default function HospitalCards(props) {
         { label: 'Multi-Speciality', value: 'Multi-Speciality' }
       ]
 
+
   return (
     <>
+
    {  !props.isOtherBranch && 
-    <div className="card ">
+    <div className="card " onClick={props.customOnClick}  >
         <div className="card-img ">
         </div>
 
@@ -90,7 +97,6 @@ export default function HospitalCards(props) {
 
     </div>
 }
-
     </>
   )
 }

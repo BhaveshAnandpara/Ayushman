@@ -10,6 +10,7 @@ import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { PersistGate } from 'redux-persist/integration/react'
+import { BrowserRouter } from 'react-router-dom';
 
 const persistConfig = {
         key: 'root',
@@ -28,7 +29,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
         <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
-                        <App />
+                        <BrowserRouter>
+                                <App />
+                        </BrowserRouter>
                 </PersistGate>
         </Provider>
 );

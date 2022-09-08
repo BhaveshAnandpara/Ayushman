@@ -3,6 +3,7 @@ import '../FindHospital/FindHospital.css'
 import axios from 'axios'
 import * as ReactDOMClient from 'react-dom/client';
 import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import Search from '../../Components/Search/Search'
 import Header from '../../Components/Header/Header'
@@ -11,6 +12,9 @@ import HospitalCards from '../../Components/HospitalCards/HospitalCards'
 
 export default function FindHospital() {
 
+  const navigate = useNavigate()
+
+
   //--------------------------------------------- Declaration of Variables -----------------------------------------------
 
   const [advSearch, setAdvSearch] = useState(true)
@@ -18,39 +22,40 @@ export default function FindHospital() {
   const [chosedDistrict, setChosedDistrict] = useState("")
   const [List, setList] = useState([])
   const [hospList, setHospList] = useState([])
-  
+
 
   //--------------------------------------------- References ---------------------------------------------------
 
   const cardSection = useRef()
 
- //------------------------------------ Functions to Recieve Data ----------------------------------------------
+  //------------------------------------ Functions to Recieve Data ----------------------------------------------
 
- // function to recieve Data from Basic Search
+  // function to recieve Data from Basic Search
 
   function getData(data) {
     setChosedDistrict(data)
   }
 
- // function to recieve Data from Advanced Search
+  // function to recieve Data from Advanced Search
 
   function getAdvSearchParams(data) {
     setListOfDistricts(data)
   }
 
- //--------------------------------------------- UseEffects ---------------------------------------------------
+
+  //--------------------------------------------- UseEffects ---------------------------------------------------
 
 
   useEffect(() => {
 
-    if (chosedDistrict != '') {  
+    if (chosedDistrict != '') {
       let newList = [chosedDistrict]
       listOfDistricts.forEach(element => {
         newList.push(element)
-      })      
+      })
       setList(newList) //Update List of Districts
     }
-  }, [chosedDistrict , listOfDistricts])
+  }, [chosedDistrict, listOfDistricts])
 
 
   useEffect(() => {
@@ -58,7 +63,7 @@ export default function FindHospital() {
     let data = ""
     let list = []
 
-    List.forEach(ele=>{
+    List.forEach(ele => {
       data = data + "_" + ele //Data for Parameters
     })
 
@@ -81,16 +86,23 @@ export default function FindHospital() {
     }
   }, [List])
 
-  
+
+  function navigateTo(data){
+    window.location.href = `/hospitalProfile?${data._id}`
+
+  }
+
   useEffect(() => {
-  
+
     // console.log(hospList)
 
     try {
       let root = ReactDOMClient.createRoot(cardSection.current)
       let HospList = []
       hospList.map(ele => {
-        HospList.push(<HospitalCards hospdata={ele} key={HospList.length} />)
+        HospList.push(
+            <HospitalCards hospdata={ele} key={HospList.length} customOnClick={()=>{navigateTo(ele)}} />
+        )
       })
       root.render(HospList)
     } catch (err) {
