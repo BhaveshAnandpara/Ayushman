@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "axios": "^0.27.2",
-    "cors": "^2.8.5"
+    "bootstrap": "^5.2.1",
+    "cors": "^2.8.5",
+    "react-bootstrap": "^2.5.0"
   }
 }

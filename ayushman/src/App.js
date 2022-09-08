@@ -15,9 +15,6 @@ import Navbar from './Components/Navbar/Navbar';
 import Header from './Components/Header/Header';
 import HospitalProfile from './Pages/HospitalProfile/HospitalProfile';
 import Search from './Components/Search/Search.jsx';
-import EmergencySection from '../src/Components/HospitalProfile/EmergencySection/EmergencySection'
-import FacilitiesSection from '../src/Components/HospitalProfile/FacilitiesSection/FacilitiesSection'
-import CostEstimatorSection from '../src/Components/HospitalProfile/CostEstimatorSection/CostEstimatorSection'
 
 import Hospital from './Pages/Hospitals/Hospital';
 import Test from './Pages/test'

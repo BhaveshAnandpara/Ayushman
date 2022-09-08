@@ -32,7 +32,7 @@ router.get('/getHospList', async (req, res) => {
             let hospList = []
             const returnedHospList = await Hospital.find()
             for (hosp of returnedHospList) {
-                hospList.push({name : hosp.hosp_name , id : hosp.hosp_id , uniqueID : hosp._id  } )
+                hospList.push({ name: hosp.hosp_name, id: hosp.hosp_id, uniqueID: hosp._id })
             }
             res.status(201).json(hospList)
 
@@ -43,6 +43,24 @@ router.get('/getHospList', async (req, res) => {
     }
 
 })
+
+router.get('/getHosp', async (req, res) => {
+
+    const id = req.query.id
+
+    console.log(id)
+
+    try {
+
+        const hosp = await Hospital.findById(id)
+        res.status(201).json(hosp)
+
+    } catch (err) {
+        res.status(201).json(err)
+    }
+
+})
+
 
 router.post('/updateData', async (req, res) => {
 
